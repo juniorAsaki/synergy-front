@@ -28,6 +28,14 @@ export class BaseService {
     return this.httpClient.post(url , data);
   }
 
+  ResetEmail(endPoint: string , data: any , id?: any): Observable<any>{
+    const headers = new HttpHeaders({
+      'Accept': 'application/json'
+    });
+    const url = id != null ? `${this.baseUrl}/${endPoint}/${id}` : `${this.baseUrl}/${endPoint}`;
+    return this.httpClient.post(url , data , {headers});
+  }
+
   update(endPoint: string , data: any , id?: string): Observable<any>{
     const url = id != null ? `${this.baseUrl}/${endPoint}/${id}` : `${this.baseUrl}/${endPoint}`;
     return this.httpClient.put(url , data);

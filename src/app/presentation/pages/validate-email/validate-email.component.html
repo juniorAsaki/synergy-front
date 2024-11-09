@@ -1,7 +1,8 @@
 <div class="container mt-5" >
   <div class="card">
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between">
       <h2>Un Email a été envoyer sur : <span class="fw-bolder">{{email}}</span></h2>
+      <a [routerLink]="['/home']" class="fw-bolder fs-4" style="color:#111;text-decoration:none">#SynergyImmo</a>
     </div>
     <div class="card-body bg-warning" style="height:100px">
       <div class="otp-container">
@@ -9,15 +10,17 @@
           <div class="otp-icon">✔️</div>
         </div>
         <h2>Enter OTP Code</h2>
-        <div class="otp-inputs">
-          <input type="text" maxlength="1" formControlName="otp1" (input)="moveToNext($event, 0)">
-          <input type="text" maxlength="1" formControlName="otp2" (input)="moveToNext($event, 1)">
-          <input type="text" maxlength="1" formControlName="otp3" (input)="moveToNext($event, 2)">
-          <input type="text" maxlength="1" formControlName="otp4" (input)="moveToNext($event, 3)">
-          <input type="text" maxlength="1" formControlName="otp5" (input)="moveToNext($event, 4)">
-          <input type="text" maxlength="1" formControlName="otp6" (input)="moveToNext($event, 5)">
-        </div>
-        <button class="verify-btn">Verify OTP</button>
+        <form action="" [formGroup]="otpForm" (ngSubmit)="validateEmail()">
+          <div class="otp-inputs">
+            <input type="number" maxlength="1" formControlName="otp1" (input)="moveToNext($event, 0)">
+            <input type="number" maxlength="1" formControlName="otp2" (input)="moveToNext($event, 1)">
+            <input type="number" maxlength="1" formControlName="otp3" (input)="moveToNext($event, 2)">
+            <input type="number" maxlength="1" formControlName="otp4" (input)="moveToNext($event, 3)">
+            <input type="number" maxlength="1" formControlName="otp5" (input)="moveToNext($event, 4)">
+            <input type="number" maxlength="1" formControlName="otp6" (input)="moveToNext($event, 5)">
+          </div>
+          <button class="verify-btn" type="submit">Verify OTP</button>
+        </form>
       </div>
     </div>
   </div>

@@ -1,15 +1,16 @@
 import {Component, OnInit, signal} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
+import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterLink} from '@angular/router';
 import {BaseService} from '../../../core/services/base.service';
 import {environment} from '../../../../environments/environment.dev';
 
 @Component({
   selector: 'app-validate-email',
   standalone: true,
-    imports: [
-        ReactiveFormsModule
-    ],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink
+  ],
   templateUrl: './validate-email.component.html',
   styleUrl: './validate-email.component.scss'
 })
@@ -61,7 +62,7 @@ export class ValidateEmailComponent implements OnInit{
   }
 
   moveToNext(event: any, number: number) {
-    if (event.target.value.length === 1 && number < 3) {
+    if (event.target.value.length === 1 && number < 5) {
       const nextInput = document.getElementById(`otp${number + 2}`);
       if (nextInput) {
         nextInput.focus();

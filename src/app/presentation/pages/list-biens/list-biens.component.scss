@@ -1,40 +1,45 @@
-.list {
-  background-image: url("/images/hero-banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: hsla(0, 0%, 0%, 0.7);
-  background-blend-mode: overlay;
+.gallery {
   display: grid;
-  place-items: center;
-  min-height: 400px;
-  text-align: center;
-  padding-top: 125px;
+  gap: 20px;
+  grid-template-columns: repeat(2, auto);
 }
 
-.grid-container{
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colonnes de largeur égale */
-  gap: 20px; /* Espacement entre les colonnes et les lignes */
+.polaroid {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  background: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform-origin: center;
+  widht:25%;
 }
 
-.pagination{
-  padding:10px;
+.polaroid img {
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+.polaroid::after {
+  content: '';
+  display: block;
+  margin-top: 10px;
   text-align: center;
-  list-style: none;
+  font-size: 12px;
+  color: #333;
 }
-.pagination li{
-  background-color: #ffffffBD;
-  padding:20px;
-  display: inline-block;
-  margin:0 10px;
-  cursor: pointer;
-}
-.pagination .active{
-  background-color: #B192EF;
-  color:#fff;
+
+/* Rotate each polaroid image for a scattered effect */
+.polaroid:nth-child(1) { transform: rotate(-5deg); }
+.polaroid:nth-child(2) { transform: rotate(5deg); }
+.polaroid:nth-child(3) { transform: rotate(-8deg); }
+.polaroid:nth-child(4) { transform: rotate(8deg); }
+.polaroid:nth-child(5) { transform: rotate(-6deg); }
+.polaroid:nth-child(6) { transform: rotate(6deg); }
+
+.background {
+  position: absolute;
+  background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood-pattern.png');
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

@@ -6,6 +6,7 @@ import {Button} from 'primeng/button';
 import {HeaderComponent} from '../../components/layout/header/header.component';
 import {FooterComponent} from '../../components/layout/footer/footer.component';
 import {SearchComponent} from '../../components/layout/search/search.component';
+import {NavBarComponent} from '../../components/layout/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-list-biens',
@@ -17,7 +18,8 @@ import {SearchComponent} from '../../components/layout/search/search.component';
     SearchComponent,
     CarouselModule,
     TagModule,
-    Button
+    Button,
+    NavBarComponent
   ],
   templateUrl: './list-biens.component.html',
   styleUrl: './list-biens.component.scss'

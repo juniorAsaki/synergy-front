@@ -39,14 +39,18 @@ export class ResetPassword1Component implements OnInit{
 
   sendEmail(){
 
+    console.log(this.enterNewPassword())
+
+
     const email = {
       email: this.formResetPassword.value.email
     }
-    this.baseService.create(environment.endPoint.register.sendOtpOfEmail , email).subscribe({
-      next: value => {
-        this.enterNewPassword.update(value => {
-          return value = true;
-        });
+
+    console.log(email);
+    this.baseService.ResetEmail(environment.endPoint.register.sendOtpOfEmail , email).subscribe({
+      next: data => {
+        this.enterNewPassword.set(true);
+        console.log(this.enterNewPassword())
       }, error: err => {
         console.error(err);
       }
@@ -62,7 +66,9 @@ export class ResetPassword1Component implements OnInit{
 
     }
 
-    this.baseService.create(environment.endPoint.register.resetPassword , requestPassword).subscribe({
+    console.log(requestPassword);
+
+    this.baseService.ResetEmail(environment.endPoint.register.resetPassword , requestPassword).subscribe({
       next: value => {
         this.router.navigateByUrl("/login")
       },
