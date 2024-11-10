@@ -38,7 +38,6 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/@angular/google-maps/esm2022/google-map/google-map.mjs",
             ]
           },
           "configurations": {

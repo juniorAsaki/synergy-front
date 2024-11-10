@@ -1,19 +1,98 @@
 <div class="container-list">
-  <!-- Liste des biens -->
   <div class="property-list">
-    <h2>Découvrez d'autres logements</h2>
+    <a class="text-dark fw-bolder fs-4 p-0 m-0"  [routerLink]="['/home']" style="text-decoration:none">#SynergyImmo</a>
+    <app-search></app-search>
 
-    <!-- Exemple de bien immobilier -->
-    <div class="property-card" *ngFor="let property of properties">
-      <img [src]="property.imageUrl" alt="{{property.name}}">
-      <div class="property-info">
-        <h3>{{ property.type }} • {{ property.city }}</h3>
-        <p>{{ property.description }}</p>
-        <p class="price">{{ property.pricePerNight }} € par nuit • {{ property.totalPrice }} € au total</p>
+    <div class="grid-container row">
+      <!-- Card Example -->
+        <div class="card" style="width: 300px;">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="assets/img/portfolio/Image 2.jpeg" style="object-fit: cover;height: 100%" alt="Image 1">
+            </div>
+            <span class="badge bg-success">Disponible</span>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Residence Nabil</div>
+            <div class="card-rating"><i class="bi bi-heart-fill"></i> 1</div>
+            <div>Abidjan , plateau (avenue nogues)</div>
+            <div class="card-footer">25 000 Fcfa la nuit</div>
+          </div>
+        </div>
+        <div class="card" style="width: 300px">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="assets/img/portfolio/Image 2.jpeg" style="object-fit: cover;height: 100%" alt="Image 1">
+            </div>
+            <span class="badge bg-success">Disponible</span>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Residence Nabil</div>
+            <div class="card-rating"><i class="bi bi-heart-fill"></i> 1</div>
+            <div>Abidjan , plateau (avenue nogues)</div>
+            <div class="card-footer">25 000 Fcfa la nuit</div>
+          </div>
+        </div>
+        <div class="card" style="width: 300px">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="assets/img/portfolio/Image 2.jpeg" style="object-fit: cover;height: 100%" alt="Image 1">
+            </div>
+            <span class="badge bg-success">Disponible</span>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Residence Nabil</div>
+            <div class="card-rating"><i class="bi bi-heart-fill"></i> 1</div>
+            <div>Abidjan , plateau (avenue nogues)</div>
+            <div class="card-footer">25 000 Fcfa la nuit</div>
+          </div>
+        </div>
+        <div class="card" style="width: 300px">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="assets/img/portfolio/Image 2.jpeg" style="object-fit: cover;height: 100%" alt="Image 1">
+            </div>
+            <span class="badge bg-success">Disponible</span>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Residence Nabil</div>
+            <div class="card-rating"><i class="bi bi-heart-fill"></i> 1</div>
+            <div>Abidjan , plateau (avenue nogues)</div>
+            <div class="card-footer">25 000 Fcfa la nuit</div>
+          </div>
+        </div>
+      <div class="card" style="width: 300px">
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="assets/img/portfolio/Image 2.jpeg" style="object-fit: cover;height: 100%" alt="Image 1">
+          </div>
+          <span class="badge bg-success">Disponible</span>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Residence Nabil</div>
+          <div class="card-rating"><i class="bi bi-heart-fill"></i> 1</div>
+          <div>Abidjan , plateau (avenue nogues)</div>
+          <div class="card-footer">25 000 Fcfa la nuit</div>
+        </div>
       </div>
+      <div class="card" style="width: 300px">
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="assets/img/portfolio/Image 2.jpeg" style="object-fit: cover;height: 100%" alt="Image 1">
+          </div>
+          <span class="badge bg-success">Disponible</span>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Residence Nabil</div>
+          <div class="card-rating"><i class="bi bi-heart-fill"></i> 1</div>
+          <div>Abidjan , plateau (avenue nogues)</div>
+          <div class="card-footer">25 000 Fcfa la nuit</div>
+        </div>
+      </div>
+
+
     </div>
   </div>
-
   <!-- Carte -->
   <div class="map">
     <app-google-map-demo> </app-google-map-demo>

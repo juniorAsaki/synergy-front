@@ -3,6 +3,7 @@ import {Button} from 'primeng/button';
 import {GalleriaModule} from 'primeng/galleria';
 import {PanelModule} from 'primeng/panel';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-detail-bien',
@@ -10,7 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     Button,
     GalleriaModule,
-    PanelModule
+    PanelModule,
+    RouterLink
   ],
   templateUrl: './detail-bien.component.html',
   styleUrl: './detail-bien.component.scss',

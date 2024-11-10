@@ -1,52 +1,36 @@
-/* Container for the search form */
-.search-container {
+.form-container {
   display: flex;
-  align-items: center;
-  background-color: #f7f7f7;
-  border-radius: 30px;
+  align-items:center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #fff;
   padding: 10px;
-  max-width: 600px;
-  margin: auto;
-}
+  border: 2px solid #ffbb00;
+  border-radius: 8px;
+  max-width: 100%;
 
-/* Style for each field */
-.search-field {
-  flex: 1;
-  margin: 0 5px;
-  padding: 15px;
+}
+.form-container div {
+  flex: 1 1 100px;
+  min-width: 150px;
+}
+.form-container input,
+.form-container select,
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1em;
+
+}
+.form-container button {
+  background-color: #ffbb00;
+  color: #111;
   border: none;
-  background-color: #ffffff;
-  border-radius: 30px;
-  text-align: center;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
-
-/* Hover effect for each field */
-.search-field:hover {
-  background-color: #e5e5e5;
-}
-
-/* Style for the search button */
-.search-button {
-  background-color: #ff3d5c;
-  border: none;
-  border-radius: 50%;
-  padding: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.search-button:hover {
-  background-color: #ff1f3a;
-}
-
-/* Icon in the search button */
-.search-button img {
-  width: 20px;
-  height: 20px;
+.form-container button:hover {
+  background-color: #fff;
+  border:2px solid #ffbb00;
+  color:#111;
 }
