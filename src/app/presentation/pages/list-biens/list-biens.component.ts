@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NgClass} from '@angular/common';
 import {CarouselModule} from 'primeng/carousel';
 import {TagModule} from 'primeng/tag';
@@ -7,6 +7,22 @@ import {HeaderComponent} from '../../components/layout/header/header.component';
 import {FooterComponent} from '../../components/layout/footer/footer.component';
 import {SearchComponent} from '../../components/layout/search/search.component';
 import {NavBarComponent} from '../../components/layout/nav-bar/nav-bar.component';
+import {GoogleMapDemoComponent} from '../google-map-demo/google-map-demo.component';
+
+
+declare var google: any;
+
+interface Property {
+  name: string;
+  type: string;
+  city: string;
+  description: string;
+  pricePerNight: number;
+  totalPrice: number;
+  imageUrl: string;
+  location: { lat: number; lng: number };
+}
+
 
 @Component({
   selector: 'app-list-biens',
@@ -19,92 +35,72 @@ import {NavBarComponent} from '../../components/layout/nav-bar/nav-bar.component
     CarouselModule,
     TagModule,
     Button,
-    NavBarComponent
+    NavBarComponent,
+    GoogleMapDemoComponent
   ],
   templateUrl: './list-biens.component.html',
   styleUrl: './list-biens.component.scss'
 })
-export class ListBiensComponent  implements OnInit{
+export class ListBiensComponent  implements AfterViewInit{
 
-  responsiveOptions: any[] | undefined;
 
-  products = [
+  @ViewChild('mapContainer', { static: false }) mapContainer!: ElementRef;
+  //map!: google.maps.Map;
+
+  properties: Property[] = [
     {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Residence Nabil',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'indisponible',
-      rating: 5
+      name: 'Izia Résidence - Studio à Angré',
+      type: 'Appartement',
+      city: 'Abidjan',
+      description: 'Studio à Angré',
+      pricePerNight: 23,
+      totalPrice: 113,
+      imageUrl: 'image1.jpg',
+      location: { lat: 5.345317, lng: -4.024429 }
     },
     {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Residence Nabil',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'disponible',
-      rating: 5
+      name: 'Superbe T2 sécurisé au cœur',
+      type: 'Appartement',
+      city: 'Abidjan',
+      description: 'Superbe T2 sécurisé',
+      pricePerNight: 32,
+      totalPrice: 158,
+      imageUrl: 'image2.jpg',
+      location: { lat: 5.360317, lng: -4.030429 }
     },
     {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Residence Nabil',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'disponible',
-      rating: 5
-    },
-    {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Residence Nabil',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: "indisponible",
-      rating: 5
-    },
-
-
-  ]
-
-  ngOnInit(): void {
-    this.responsiveOptions = [
-      {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 2,
-        numScroll: 1
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1
-      }
-    ];
-  }
-  getSeverity(statut: any) {
-    if (statut == "disponible") {
-        return 'success';
-    }else {
-      return 'warning';
+      name: 'Auberge de Jeunesse Hostel',
+      type: 'Chambre partagée',
+      city: 'Abidjan',
+      description: 'Auberge de Jeunesse',
+      pricePerNight: 12,
+      totalPrice: 60,
+      imageUrl: 'image3.jpg',
+      location: { lat: 5.332317, lng: -4.022429 }
     }
+  ];
+
+  constructor() {}
+
+  ngAfterViewInit(): void {
+    this.initMap();
   }
+
+  initMap(): void {
+    const center = { lat: 5.345317, lng: -4.024429 }; // Coordonnées d'Abidjan
+ //   this.map = new google.maps.Map(this.mapContainer.nativeElement, {
+  //    center: center,
+    //  zoom: 12
+    //});
+
+    this.properties.forEach(property => {
+      new google.maps.Marker({
+        position: property.location,
+       // map: this.map,
+        label: `${property.pricePerNight} €`
+      });
+    });
+  }
+
+
 }

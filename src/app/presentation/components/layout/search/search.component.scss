@@ -1,54 +1,52 @@
-.search-bar {
-  background-color: #d8ba14;
-  padding: 30px;
-  width: 50%;
+/* Container for the search form */
+.search-container {
   display: flex;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border:2px solid;
-  position:absolute;
-  z-index:30;
-  left:50%;
-  transform:translateX(-50%);
-  top:45%;
-  border-radius:15px;
-}
-
-.search-bar h1 {
-  font-size: 18px;
-  margin: 0;
-  flex-grow: 1;
-}
-
-
-.search-options {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.search-options button {
-  background: #ff69b4;
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.search-options button:nth-child(2) {
-  background: white;
-  color: black;
-  border: 1px solid #ccc;
-}
-
-.search-bar select, .search-bar input {
+  background-color: #f7f7f7;
+  border-radius: 30px;
   padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  max-width: 600px;
+  margin: auto;
 }
 
-.search-bar input {
-  flex-grow: 1;
+/* Style for each field */
+.search-field {
+  flex: 1;
+  margin: 0 5px;
+  padding: 15px;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for each field */
+.search-field:hover {
+  background-color: #e5e5e5;
+}
+
+/* Style for the search button */
+.search-button {
+  background-color: #ff3d5c;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #ff1f3a;
+}
+
+/* Icon in the search button */
+.search-button img {
+  width: 20px;
+  height: 20px;
 }

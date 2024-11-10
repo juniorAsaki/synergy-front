@@ -1,12 +1,23 @@
-# stage 1
-FROM node:latest as node
+FROM node:20.15.1-alpine3.20
+LABEL maintainer="jncho1717@gmail.com"
+
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
+# Installer Angular CLI globalement
+RUN npm install -g @angular/cli
+
+# Copier les fichiers package.json et package-lock.json
+COPY package*.json ./
+
+# Installer les dépendances
+RUN npm install
+
+# Copier le reste de l'application
 COPY . .
 
-RUN npm install
-RUN npm run build --prod
+# Exposer le port 4200
+EXPOSE 4200
 
-# stage 2
-FROM nginx:alpine
-COPY --from=node /app/dist/app-immo-project /usr/share/nginx/html
+# Commande pour démarrer l'application Angular
+CMD ["ng", "serve", "--host", "0.0.0.0","--port","4200"]
