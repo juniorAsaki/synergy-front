@@ -24,6 +24,7 @@ import {
 import {
   DashboardCustomerComponent
 } from './presentation/features/space-client/presentation/layout/dashboard-customer/dashboard.customer.component';
+import {ReservationBienComponent} from './presentation/pages/reservation-bien/reservation-bien.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -34,6 +35,7 @@ export const routes: Routes = [
   {path: "" , redirectTo: "home" , pathMatch:"full"},
   {path: "validate-email/:email" , component: ValidateEmailComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
+  {path: "reservation-bien" , component: ReservationBienComponent},
   {path: "admin" , component: BaseAdminComponent , children: [
       {path: "dashboard" , component: DashboardComponent}
     ]},

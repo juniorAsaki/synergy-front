@@ -1,0 +1,69 @@
+<header>
+  <a class="text-dark fw-bolder fs-4 p-0 mb-3 logo"  [routerLink]="['/home']" style="text-decoration:none">#SynergyImmo</a>
+</header>
+<main class="reservation-container">
+  <section class="reservation-details">
+    <h1 class="fw-bolder">Demande de réservation</h1><br>
+    <div class="voyage-info m-2">
+      <h2>Votre sejour</h2><br>
+
+      <div class="info-item">
+        <p>Dates de debut</p>
+        <p>11 nov.</p>
+      </div>
+      <div class="info-item">
+        <p>Dates de fin</p>
+        <p>15 nov.</p>
+      </div>
+    </div>
+    <br>
+    <div class="payment-options">
+      <h2>Choisissez Le moyens de paiement</h2>
+      <div class="payment-grid">
+        <label class="payment-option">
+          <input type="checkbox" name="payment" value="wave">
+          <img src="assets/img/logos/Wave.jpg" alt="Wave">
+          <span>Wave</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="checkbox" name="payment" value="orange-money">
+          <img src="assets/img/logos/orange.png" alt="Orange Money">
+          <span>Orange Money</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="checkbox" name="payment" value="mtn-mfs">
+          <img src="assets/img/logos/mtn.jpg" alt="MTN MFS CI">
+          <span>MTN money</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="checkbox" name="payment" value="moov-money">
+          <img src="assets/img/logos/moov.png" alt="Moov Money">
+          <span>Moov Money</span>
+        </label>
+      </div>
+    </div>
+  </section>
+  <aside class="reservation-summary">
+    <div class="room-info">
+      <img src="room.jpg" alt="Chambre avec accès piscine">
+      <div>
+        <h3>Chambre avec accès piscine</h3>
+        <p>Chambre dans chambre d'hôtes</p>
+        <p>⭐ 4,75 (4 commentaires)</p>
+      </div>
+    </div>
+    <div class="price-details">
+      <h2>Détails du prix</h2>
+      <p>14,00 € x 5 nuits</p>
+      <p>70,00 €</p>
+      <p>Frais de service Airbnb</p>
+      <p>11,86 €</p>
+      <hr>
+      <p>Total (EUR)</p>
+      <p>81,86 €</p>
+    </div>
+  </aside>
+</main>
