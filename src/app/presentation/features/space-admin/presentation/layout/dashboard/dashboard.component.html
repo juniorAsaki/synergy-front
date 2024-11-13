@@ -1,149 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Définition des métadonnées et liens vers les styles CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icones Remixicon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <!-- Fichier de style personnalisé -->
 
-<!-- CONTENT -->
-<section id="content">
+    <title>File Sharing Platform UI | AsmrProg</title>
+  </head>
 
+  <body>
+    <!-- Section de gauche : barre latérale -->
+    <div class="left-section">
+      <div class="sidebar">
+        <!-- Titre de la barre latérale -->
+        <h2>Synergy Immo</h2>
+        <!-- Éléments du menu avec des icônes -->
+        <div class="item active">
+          <i class="ri-apps-line"></i>
+          <h3>Dashboard</h3>
+        </div>
+        <div class="item">
+          <i class="ri-user-fill"></i>
+          <h3>Proprietaire</h3>
+        </div>
+        <div class="item">
+          <i class="ri-user-3-line"></i>
+          <h3>Client</h3>
+        </div>
+        <div class="item">
+          <i class="ri-folder-lock-line"></i>
+          <h3>Reservation</h3>
+        </div>
 
-  <!-- MAIN -->
-  <main>
-    <div class="head-title">
-      <div class="left">
-        <h1>Dashboard</h1>
-        <ul class="breadcrumb">
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li><i class='bx bx-chevron-right' ></i></li>
-          <li>
-            <a class="active" href="#">Home</a>
-          </li>
-        </ul>
+        <div class="item">
+          <i class="ri-settings-3-line"></i>
+          <h3>Settings</h3>
+        </div>
       </div>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">profil</a></li>
-          <li><a class="dropdown-item" href="#">logout</a></li>
-        </ul>
-      </li>
+
+      <!-- Bouton de déconnexion -->
+      <div class="sign-out">
+        <i class="ri-logout-box-r-line"></i>
+        <h3>Sign Out</h3>
+      </div>
     </div>
 
-    <ul class="box-info">
-      <li>
-        <i class='bx bxs-calendar-check' ></i>
-        <span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
-					</span>
-      </li>
-      <li>
-        <i class='bx bxs-group' ></i>
-        <span class="text">
-						<h3>2834</h3>
-						<p>Visitors</p>
-					</span>
-      </li>
-      <li>
-        <i class='bx bxs-dollar-circle' ></i>
-        <span class="text">
-						<h3>$2543</h3>
-						<p>Total Sales</p>
-					</span>
-      </li>
-    </ul>
-
-
-    <div class="table-data">
-      <div class="order">
-        <div class="head">
-          <h3>Recent Orders</h3>
-          <i class='bx bx-search' ></i>
-          <i class='bx bx-filter' ></i>
+    <!-- Section principale -->
+    <div class="main">
+      <!-- En-tête avec barre de recherche et icônes -->
+      <div class="header">
+        <div class="search">
+          <button><i class="ri-search-2-line"></i></button>
+          <input type="text" placeholder="Search" />
+          <i class="ri-equalizer-line"></i>
         </div>
-        <table>
-          <thead>
-          <tr>
-            <th>User</th>
-            <th>Date Order</th>
-            <th>Status</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status completed">Completed</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status pending">Pending</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status process">Process</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status pending">Pending</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status completed">Completed</span></td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="icon-btns">
+          <i class="ri-notification-line"></i>
+          <i class="ri-message-3-line"></i>
+          <i class="ri-menu-line" id="menu-btn"></i>
+        </div>
       </div>
-      <div class="todo">
-        <div class="head">
-          <h3>Todos</h3>
-          <i class='bx bx-plus' ></i>
-          <i class='bx bx-filter' ></i>
+
+      <!-- Section d'accès rapide -->
+      <h3 class="separator">Acces rapide</h3>
+      <div class="quick-access">
+        <!-- Éléments avec icônes et informations -->
+        <div class="item">
+          <i class="ri-user-fill"></i>
+          <h5>Proprietaires</h5>
+          <p>17</p>
         </div>
-        <ul class="todo-list">
-          <li class="completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="not-completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="not-completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-        </ul>
+        <div class="item">
+          <i class="ri-user-3-line"></i>
+          <h5>Clients</h5>
+          <p>128</p>
+        </div>
+        <div class="item">
+          <i class="ri-folder-lock-line"></i>
+          <h5>Reservations</h5>
+          <p>1500</p>
+        </div>
+        <div class="item">
+          <i class="ri-store-3-fill"></i>
+          <h5>Autres</h5>
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Section des fichiers récents -->
+      <h3 class="separator">Recent</h3>
+      <table>
+        <tbody>
+          <!-- Ligne sélectionnée -->
+          <tr class="selected">
+            <td class="name">Koffi Ange</td>
+            <td class="name">Residence meublée</td>
+            <td class="name">12/11/2024</td>
+            <td class="size">25 000 FCFA</td>
+            <td class="more"><i class="ri-more-fill"></i></td>
+          </tr>
+          <tr class="">
+            <td class="name">Koffi Ange</td>
+            <td class="name">Residence meublée</td>
+            <td class="name">12/11/2024</td>
+            <td class="size">25 000 FCFA</td>
+            <td class="more"><i class="ri-more-fill"></i></td>
+          </tr>
+          <tr class="">
+            <td class="name">Koffi Ange</td>
+            <td class="name">Residence meublée</td>
+            <td class="name">12/11/2024</td>
+            <td class="size">25 000 FCFA</td>
+            <td class="more"><i class="ri-more-fill"></i></td>
+          </tr>
+          <tr class="">
+            <td class="name">Koffi Ange</td>
+            <td class="name">Residence meublée</td>
+            <td class="name">12/11/2024</td>
+            <td class="size">25 000 FCFA</td>
+            <td class="more"><i class="ri-more-fill"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section droite : profil utilisateur et widgets -->
+    <div class="right-section">
+      <!-- Profil utilisateur -->
+      <div class="profile">
+        <div class="info">
+          <img src="assets/profile.png" />
+          <div class="account">
+            <h5>Mesmer Coulibaly</h5>
+            <p>mesmercoulibalygmail.com</p>
+          </div>
+        </div>
+        <i class="ri-arrow-down-s-line"></i>
+      </div>
+
+      <!-- Widgets -->
+      <div class="widgets">
+        <!-- Informations sur le disque -->
+        <div class="disk">
+          <div class="progress"></div>
+          <div class="info">
+            <h5><span>750</span> GB Free<span> / 1</span> TB</h5>
+            <p>Available Storage</p>
+          </div>
+        </div>
+
+        <!-- Bouton de téléversement et espace premium -->
+        <div class="bottom">
+          <button>New Upload <i class="ri-add-line"></i></button>
+          <div class="premium">
+            <div class="title">
+              <i class="ri-folder-add-line"></i>
+              <h5>Buy Premium</h5>
+            </div>
+            <p>Upgrade space now and get a 18% discount.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-  <!-- MAIN -->
-</section>
-<!-- CONTENT -->
+
+    <!-- Fichier JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
