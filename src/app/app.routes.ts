@@ -19,9 +19,7 @@ import {
 import {
   BaseCustomerComponent
 } from './presentation/features/space-client/presentation/layout/base-customer/base-customer.component';
-import {
-  DashboardCustomerComponent
-} from './presentation/features/space-client/presentation/layout/dashboard-customer/dashboard.customer.component';
+
 import {ReservationBienComponent} from './presentation/pages/reservation-bien/reservation-bien.component';
 
 export const routes: Routes = [
@@ -40,6 +38,6 @@ export const routes: Routes = [
   {path: "owner" , component: BaseOwnerComponent , children: [
     ]},
   {path: "customer" , component: BaseCustomerComponent , children: [
-      {path: "dashboard" , component: DashboardCustomerComponent}
+
     ]}
 ];
