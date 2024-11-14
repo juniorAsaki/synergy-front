@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {PanelModule} from 'primeng/panel';
 import {Button} from 'primeng/button';
 import {GalleriaModule} from 'primeng/galleria';
+import {PanelModule} from 'primeng/panel';
+import {RouterLink} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
-  selector: 'app-detail-bien',
+  selector: 'app-bien-almeda',
   standalone: true,
   imports: [
     Button,
@@ -20,7 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ]
 })
-export class BienAlmedaComponent implements OnInit{
+export class BienAlmedaComponent implements OnInit {
 
   images: any[] | undefined;
 
