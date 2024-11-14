@@ -21,9 +21,7 @@ import {
 } from './presentation/features/space-client/presentation/layout/base-customer/base-customer.component';
 
 import {ReservationBienComponent} from './presentation/pages/reservation-bien/reservation-bien.component';
-<<<<<<< HEAD
-import { ListBienOwnerComponent } from './presentation/features/space-owner/presentation/layout/list-bien-owner/list-bien-owner.component';
-=======
+
 import {
   ListReservationComponent
 } from './presentation/features/space-owner/presentation/layout/list-reservation/list-reservation.component';
@@ -37,7 +35,6 @@ import {
 import {
   UpdateInfoOwnerComponent
 } from './presentation/features/space-owner/presentation/shared/update-info-owner/update-info-owner.component';
->>>>>>> 2c1d8feb9174481d46085ecc4ecec3dc0ca668fd
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -52,19 +49,13 @@ export const routes: Routes = [
   {path: "admin" , component: BaseAdminComponent , children: [
       {path: "dashboard" , component: DashboardComponent}
     ]},
-<<<<<<< HEAD
-  {path: "owner",
-    children: [
-    {path: "owner" , component: BaseOwnerComponent},
-    {path: "listBien" , component: ListBienOwnerComponent}
-=======
   {path: "owner" , component: BaseOwnerComponent , children: [
       {path: "list-reservation" , component: ListReservationComponent},
       {path: "list-biens" , component: ListBiensOwnerComponent},
       {path: "add-bien" , component: AddBiensComponent},
       {path: "profil" , component: InfosOwnerComponent},
       {path: "update-owner" , component: UpdateInfoOwnerComponent}
->>>>>>> 2c1d8feb9174481d46085ecc4ecec3dc0ca668fd
+
     ]},
   {path: "customer" , component: BaseCustomerComponent ,
     children: [
