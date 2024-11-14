@@ -29,6 +29,20 @@ import {BienPalmComponent} from './presentation/pages/detail-biens/bien-palm/bie
 import {BienPalmeraieComponent} from './presentation/pages/detail-biens/bien-palmeraie/bien-palmeraie.component';
 import {BienPalmiersComponent} from './presentation/pages/detail-biens/bien-palmiers/bien-palmiers.component';
 
+import {
+  ListReservationComponent
+} from './presentation/features/space-owner/presentation/layout/list-reservation/list-reservation.component';
+import {AddBiensComponent} from './presentation/features/space-owner/presentation/shared/add-biens/add-biens.component';
+import {
+  ListBiensOwnerComponent
+} from './presentation/features/space-owner/presentation/layout/list-biens-owner/list-biens.component';
+import {
+  InfosOwnerComponent
+} from './presentation/features/space-owner/presentation/layout/infos-owner/infos-owner.component';
+import {
+  UpdateInfoOwnerComponent
+} from './presentation/features/space-owner/presentation/shared/update-info-owner/update-info-owner.component';
+
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
   {path: "login" , component: LoginComponent},
@@ -50,8 +64,15 @@ export const routes: Routes = [
       {path: "dashboard" , component: DashboardComponent}
     ]},
   {path: "owner" , component: BaseOwnerComponent , children: [
+      {path: "list-reservation" , component: ListReservationComponent},
+      {path: "list-biens" , component: ListBiensOwnerComponent},
+      {path: "add-bien" , component: AddBiensComponent},
+      {path: "profil" , component: InfosOwnerComponent},
+      {path: "update-owner" , component: UpdateInfoOwnerComponent}
+
     ]},
-  {path: "customer" , component: BaseCustomerComponent , children: [
+  {path: "customer" , component: BaseCustomerComponent ,
+    children: [
 
     ]}
 ];
