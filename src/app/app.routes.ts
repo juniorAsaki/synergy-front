@@ -21,6 +21,7 @@ import {
 } from './presentation/features/space-client/presentation/layout/base-customer/base-customer.component';
 
 import {ReservationBienComponent} from './presentation/pages/reservation-bien/reservation-bien.component';
+import { ListBienOwnerComponent } from './presentation/features/space-owner/presentation/layout/list-bien-owner/list-bien-owner.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -35,9 +36,13 @@ export const routes: Routes = [
   {path: "admin" , component: BaseAdminComponent , children: [
       {path: "dashboard" , component: DashboardComponent}
     ]},
-  {path: "owner" , component: BaseOwnerComponent , children: [
+  {path: "owner",
+    children: [
+    {path: "owner" , component: BaseOwnerComponent},
+    {path: "listBien" , component: ListBienOwnerComponent}
     ]},
-  {path: "customer" , component: BaseCustomerComponent , children: [
+  {path: "customer" , component: BaseCustomerComponent ,
+    children: [
 
     ]}
 ];
