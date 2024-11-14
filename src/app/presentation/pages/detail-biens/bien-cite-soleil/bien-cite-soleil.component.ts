@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Button} from 'primeng/button';
 import {GalleriaModule} from 'primeng/galleria';
 import {PanelModule} from 'primeng/panel';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterLink} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
-  selector: 'app-detail-bien',
+  selector: 'app-bien-cite-soleil',
   standalone: true,
   imports: [
     Button,
@@ -14,13 +14,13 @@ import {RouterLink} from '@angular/router';
     PanelModule,
     RouterLink
   ],
-  templateUrl: './detail-bien.component.html',
-  styleUrl: './detail-bien.component.scss',
+  templateUrl: './bien-cite-soleil.component.html',
+  styleUrl: './bien-cite-soleil.component.scss',
   providers: [
     BrowserAnimationsModule
   ]
 })
-export class DetailBienComponent implements OnInit{
+export class BienCiteSoleilComponent implements OnInit {
 
   images: any[] | undefined;
 
@@ -106,5 +106,7 @@ export class DetailBienComponent implements OnInit{
   prev() {
     this.activeIndex--;
   }
+
+
 
 }

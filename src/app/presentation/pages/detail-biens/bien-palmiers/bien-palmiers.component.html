@@ -1,0 +1,58 @@
+<div class="property-details-container">
+  <div class="gallery">
+    <div class="carousel-container">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/portfolio/palmiers.jpg" class="d-block w-100" style="height:500px; object-fit: cover; border-radius:20px;" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/portfolio/palmiers.jpg" class="d-block w-100" style="height:500px; object-fit: cover; border-radius:20px;" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/portfolio/palmiers.jpg" class="d-block w-100" style="height:500px; object-fit: cover; border-radius:20px;" alt="Image 3">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <img src="assets/img/portfolio/palmiers.jpg" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" alt="Image 4">
+      </div>
+      <div class="col">
+        <img src="assets/img/portfolio/palmiers.jpg" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" alt="Image 5">
+      </div>
+    </div>
+  </div>
+
+  <div class="details">
+    <a class="text-dark fw-bolder fs-4 p-0 mb-3" [routerLink]="['/home']" style="text-decoration:none">#SynergyImmo</a>
+    <div class="row mt-5">
+      <h2 class="location-title">Côte d'Ivoire, Man</h2>
+      <p class="features">· 2 chambres · 3 lits · 1 salle de bains</p>
+      <div class="highlights">
+        <p>La résidence de Man vous accueille avec confort et charme. Située au cœur de la région montagneuse, elle offre un cadre parfait pour se détendre et découvrir la beauté de l'ouest ivoirien.</p>
+      </div>
+      <div class="rating">
+        <i class="bi bi-heart-fill"></i> 3 · 15 commentaires
+      </div>
+    </div>
+
+    <div class="payment-card">
+      <div class="price">19 000 FCFA / Nuit</div>
+      <label>Date d'arrivée</label>
+      <input type="date">
+      <label>Date de départ</label>
+      <input type="date">
+
+      <div class="summary">
+        <p>19 000 FCFA x 5 (nombre de jours)</p>
+        <hr>
+        <p><strong>Total à payer : 95 000 FCFA</strong></p>
+      </div>
+
+      <a [routerLink]="['/reservation-bien']" class="reserve-button">Réserver</a>
+    </div>
+  </div>
+</div>
+
