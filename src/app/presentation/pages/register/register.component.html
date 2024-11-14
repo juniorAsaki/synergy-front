@@ -7,7 +7,7 @@
             <div class="col-lg-6 d-flex align-items-center bg-warning" >
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <h1><a class="text-dark fw-bolder" [routerLink]="['/home']" style="text-decoration:none">#SynergyImmo</a></h1>
-                <h4 class="mb-4 text-dark">Connecte toi pour jouir de quelque chose whaoooo !</h4>
+                <h4 class="mb-4 text-dark">Connectez-vous pour découvrir un monde incroyable !</h4>
               </div>
             </div>
             <div class="col-lg-6" >
@@ -20,9 +20,8 @@
                 <form (ngSubmit)="register()" [formGroup]="formGroup">
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form2Example11">Nom</label>
                     <input type="email" id="lastName" class="form-control"
-                           placeholder="nom" formControlName="lastName" />
+                           placeholder="seugban" formControlName="lastName" />
                     @if (isInvalidaedInput(formGroup.controls['lastName'])){
                       <small class="text-danger">
                         le Nom est requis
@@ -31,9 +30,8 @@
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form2Example11">Prenom</label>
                     <input type="email" id="firstName" class="form-control"
-                           placeholder="prenom"  formControlName="firstName"/>
+                           placeholder="ange-berthe"  formControlName="firstName"/>
                     @if (isInvalidaedInput(formGroup.controls['firstName'])){
                       <small class="text-danger">
                         le Prenom est requis
@@ -42,7 +40,6 @@
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form2Example11">email</label>
                     <input type="email" id="form2Example11" class="form-control"
                            [ngClass]="isInvalidaedInput(formGroup.controls['email']) ? 'invalid-feedback':''"
                            placeholder="jncho@gmail.com" required formControlName="email"/>
@@ -54,7 +51,6 @@
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form2Example22">Password</label>
                     <input formControlName="password" type="password" id="form2Example22" class="form-control" placeholder="****" required/>
                     @if (isInvalidaedInput(formGroup.controls['password'])){
                       <small class="text-danger">
