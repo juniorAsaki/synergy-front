@@ -1,50 +1,45 @@
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-//
-// Scripts
-//
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-//
-// Scripts
-//
-const sidebarItems = document.querySelectorAll('.sidebar .item');
-const tableRows = document.querySelectorAll('.main table tbody tr');
+window.addEventListener('DOMContentLoaded', event => {
 
-const menuBtn = document.getElementById('menu-btn');
-const leftSection = document.querySelector('.left-section');
-
-let isMenuOpen = false;
-
-sidebarItems.forEach(sideItem => {
-    sideItem.addEventListener('click', () => {
-        sidebarItems.forEach(item => {
-            item.classList.remove('active');
-        });
-        sideItem.classList.add('active');
-    });
-});
-
-tableRows.forEach(tableTr => {
-    tableTr.addEventListener('click', () => {
-        tableRows.forEach(item => {
-            item.classList.remove('selected');
-        });
-        tableTr.classList.add('selected');
-    });
-});
-
-menuBtn.addEventListener('click', () => {
-    if (!isMenuOpen) {
-        leftSection.style.left = '0';
-    } else {
-        leftSection.style.left = '-160px';
+  // Navbar shrink function
+  var navbarShrink = function () {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    if (!navbarCollapsible) {
+      return;
     }
-    isMenuOpen = !isMenuOpen;
+    if (window.scrollY === 0) {
+      navbarCollapsible.classList.remove('navbar-shrink')
+    } else {
+      navbarCollapsible.classList.add('navbar-shrink')
+    }
+
+  };
+
+  // Shrink the navbar
+  navbarShrink();
+
+  // Shrink the navbar when page is scrolled
+  document.addEventListener('scroll', navbarShrink);
+
+  //  Activate Bootstrap scrollspy on the main nav element
+  const mainNav = document.body.querySelector('#mainNav');
+  if (mainNav) {
+    new bootstrap.ScrollSpy(document.body, {
+      target: '#mainNav',
+      rootMargin: '0px 0px -40%',
+    });
+  };
+
+  // Collapse responsive navbar when toggler is visible
+  const navbarToggler = document.body.querySelector('.navbar-toggler');
+  const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link')
+  );
+  responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+      if (window.getComputedStyle(navbarToggler).display !== 'none') {
+        navbarToggler.click();
+      }
+    });
+  });
+
 });

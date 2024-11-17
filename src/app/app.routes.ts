@@ -42,6 +42,15 @@ import {
 import {
   UpdateInfoOwnerComponent
 } from './presentation/features/space-owner/presentation/shared/update-info-owner/update-info-owner.component';
+import {
+  ListReservationCustomerComponent
+} from './presentation/features/space-client/presentation/layout/list-reservation-customer/list-reservation-customer.component';
+import {
+  DetailReservationCustomerComponent
+} from './presentation/features/space-client/presentation/layout/detail-reservation-customer/detail-reservation-customer.component';
+import {
+  InfosPersoCustomerComponent
+} from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -73,6 +82,8 @@ export const routes: Routes = [
     ]},
   {path: "customer" , component: BaseCustomerComponent ,
     children: [
-
+      {path: "list-reservation" , component: ListReservationCustomerComponent},
+      {path: "detail-reservation" , component: DetailReservationCustomerComponent},
+      {path: "infos" , component: InfosPersoCustomerComponent}
     ]}
 ];

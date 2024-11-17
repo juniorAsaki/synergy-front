@@ -1,19 +1,16 @@
-header {
-  padding: 1rem;
-  background-color: #ffc800;
-  color: #fff;
-  text-align: center;
-  font-size: 1.5rem;
+/* Styles personnalisés */
+.navbar-custom {
+  background-color: #ffc107; /* Jaune */
+  position:fixed;
+  width: 100%;
+  top:0;
+}
+.navbar-brand {
   font-weight: bold;
 }
-
-ul {
-  li {
-    list-style:none;
-
-    a{
-      text-decoration:none;
-      margin-left:30px;
-    }
-  }
+.nav-link {
+  color: white !important;
+}
+.dropdown-menu {
+  border-radius: 0.5rem;
 }
