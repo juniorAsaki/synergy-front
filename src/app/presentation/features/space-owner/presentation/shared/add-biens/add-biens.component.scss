@@ -1,0 +1,27 @@
+.form-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 1500px;
+  width: 100%;
+}
+.form-container h2 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.form-container p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+.form-check-label {
+  font-weight: normal;
+}
+.btn-custom {
+  background-color: #ffc800;
+  color: #ffffff;
+}
+.btn-custom:hover {
+  background-color: #ffc800;
+}

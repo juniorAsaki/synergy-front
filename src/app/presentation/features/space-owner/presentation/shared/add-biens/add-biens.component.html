@@ -1,0 +1,110 @@
+<div class="form-container m-auto mt-3">
+  <div class="text-group d-flex justify-content-between">
+    <div class="text-1">
+      <h2>Enregistrement de Résidence</h2>
+      <p>Remplissez les informations ci-dessous pour ajouter une nouvelle résidence.</p>
+    </div>
+    <div class="back">
+      <a [routerLink]="['/owner/list-biens']" class="btn btn-outline-dark">Retour</a>
+    </div>
+  </div>
+  <form class="d-flex justify-content-around">
+    <div class="right m-3">
+      <!-- Nom et Prix -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Nom de la résidence</label>
+          <input type="text" class="form-control py-3" id="name" name="name" placeholder="Belle Vue" required>
+        </div>
+        <div class="col-md-6">
+          <label for="BigDecimal" class="form-label">Prix</label>
+          <input type="text" class="form-control py-3" id="BigDecimal" name="BigDecimal" placeholder="500.00" step="0.01" required>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Décrivez la résidence..." required></textarea>
+      </div>
+
+      <!-- Caractéristiques -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="NumberOfRooms" class="form-label">Chambres</label>
+          <input type="text" class="form-control py-3" id="NumberOfRooms" name="NumberOfRooms" required>
+        </div>
+        <div class="col-md-4">
+          <label for="NumberOfShowers" class="form-label">Salles de bain</label>
+          <input type="text" class="form-control py-3" id="NumberOfShowers" name="NumberOfShowers" required>
+        </div>
+        <div class="col-md-4">
+          <label for="NumberOfDiningRoom" class="form-label">Salles à manger</label>
+          <input type="text" class="form-control py-3" id="NumberOfDiningRoom" name="NumberOfDiningRoom" required>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="NumberOfTerrace" class="form-label">Terrasses</label>
+          <input type="text" class="form-control py-3" id="NumberOfTerrace" name="NumberOfTerrace" required>
+        </div>
+        <div class="col-md-4">
+          <label for="NumberOfLounges" class="form-label">Salons</label>
+          <input type="text" class="form-control py-3" id="NumberOfLounges" name="NumberOfLounges" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="left m-3">
+      <!-- Options -->
+      <div class="mb-3">
+        <label class="form-label">Options</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="wifi" name="wifi">
+          <label class="form-check-label" for="wifi">Wi-Fi</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="parking" name="parking">
+          <label class="form-check-label" for="parking">Parking</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="catering" name="catering">
+          <label class="form-check-label" for="catering">Restauration</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="cleaning" name="cleaning">
+          <label class="form-check-label" for="cleaning">Service de nettoyage</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="available" name="available">
+          <label class="form-check-label" for="available">Disponible</label>
+        </div>
+      </div>
+
+      <!-- Localisation -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="city" class="form-label">Ville</label>
+          <input type="text" class="form-control py-3" id="city" name="city" placeholder="Abidjan , Yopougon" required>
+        </div>
+        <div class="col-md-6">
+          <label for="district" class="form-label">Quartier</label>
+          <input type="text" class="form-control py-3" id="district" name="district" placeholder="Micao" required>
+        </div>
+      </div>
+
+
+      <!-- Images -->
+      <div class="mb-4">
+        <label for="PictureResidences" class="form-label">Images de la résidence</label>
+        <input type="file" class="form-control py-4" id="PictureResidences" name="PictureResidences" multiple accept="image/*">
+      </div>
+
+      <!-- Bouton d'envoi -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-custom">Enregistrer la Résidence</button>
+      </div>
+    </div>
+  </form>
+</div>
