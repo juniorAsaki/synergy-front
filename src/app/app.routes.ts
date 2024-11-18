@@ -51,6 +51,7 @@ import {
 import {
   InfosPersoCustomerComponent
 } from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
+import {MoyenPaiementComponent} from './presentation/components/shared/moyen-paiement/moyen-paiement.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -61,6 +62,7 @@ export const routes: Routes = [
   {path: "validate-email/:email" , component: ValidateEmailComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
   {path: "reservation-bien" , component: ReservationBienComponent},
+  {path: "paiement" , component: MoyenPaiementComponent},
   {path: "bien-almeda" , component: BienAlmedaComponent},
   {path: "bien-belle-vue" , component: BienBelleVueComponent},
   {path: "bien-bonheur" , component: BienBonheurComponent},
