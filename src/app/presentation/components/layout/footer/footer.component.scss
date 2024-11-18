@@ -1,0 +1,28 @@
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer .btn-social {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer .btn-social:hover {
+  color: #343a40;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: #f8f9fa;
+}
