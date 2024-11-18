@@ -11,6 +11,12 @@ export const environment = {
       verifyCountUser: "api/v1/users/verify-and-activate",
       sendOtpOfEmail: "api/v1/users/request-password-reset",
       resetPassword: "api/v1/users/reset-password",
+    },
+    residence: {
+      getAll: "api/v1/owner/residences",
+      getOne: "api/v1/owner/residence/slug",
+      save: "api/v1/owner/residences",
+      savePicture: "api/v1/owner/picture-residences"
     }
   }
 }
