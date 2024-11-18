@@ -15,5 +15,6 @@ export interface Residence {
   available: boolean,
   city: string,
   district: string,
+  availabilityDate: Date
   PictureResidences: string[]
 }

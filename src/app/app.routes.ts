@@ -20,14 +20,6 @@ import {
 } from './presentation/features/space-client/presentation/layout/base-customer/base-customer.component';
 
 import {ReservationBienComponent} from './presentation/pages/reservation-bien/reservation-bien.component';
-import {BienAlmedaComponent} from './presentation/pages/detail-biens/bien-almeda/bien-almeda.component';
-import {BienBelleVueComponent} from './presentation/pages/detail-biens/bien-belle-vue/bien-belle-vue.component';
-import {BienBonheurComponent} from './presentation/pages/detail-biens/bien-bonheur/bien-bonheur.component';
-import {BienCiteSoleilComponent} from './presentation/pages/detail-biens/bien-cite-soleil/bien-cite-soleil.component';
-import {BienNabilComponent} from './presentation/pages/detail-biens/bien-nabil/bien-nabil.component';
-import {BienPalmComponent} from './presentation/pages/detail-biens/bien-palm/bien-palm.component';
-import {BienPalmeraieComponent} from './presentation/pages/detail-biens/bien-palmeraie/bien-palmeraie.component';
-import {BienPalmiersComponent} from './presentation/pages/detail-biens/bien-palmiers/bien-palmiers.component';
 
 import {
   ListReservationComponent
@@ -51,6 +43,7 @@ import {
 import {
   InfosPersoCustomerComponent
 } from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
+import {DetailBienComponent} from './presentation/pages/detail-bien/detail-bien.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -61,14 +54,7 @@ export const routes: Routes = [
   {path: "validate-email/:email" , component: ValidateEmailComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
   {path: "reservation-bien" , component: ReservationBienComponent},
-  {path: "bien-almeda" , component: BienAlmedaComponent},
-  {path: "bien-belle-vue" , component: BienBelleVueComponent},
-  {path: "bien-bonheur" , component: BienBonheurComponent},
-  {path: "bien-cite-soleil" , component: BienCiteSoleilComponent},
-  {path: "bien-nabil" , component: BienNabilComponent},
-  {path: "bien-palm" , component: BienPalmComponent},
-  {path: "bien-palmeraie" , component: BienPalmeraieComponent},
-  {path: "bien-palmiers" , component: BienPalmiersComponent},
+  {path: "detail/:slug" , component: DetailBienComponent},
   {path: "admin" , component: BaseAdminComponent , children: [
       {path: "dashboard" , component: DashboardComponent}
     ]},

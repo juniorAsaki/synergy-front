@@ -4,144 +4,25 @@
       <h2 class="section-heading text-uppercase">Nos derniers biens</h2>
     </div>
     <div class="row">
-      <div class="col">
-        <a routerLink="/bien-nabil" style="text-decoration: none;"> <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/nabil.jpg" class="card-img-top" alt="..." style="width:100%; height: 250px;">
-            <div class="availability-badge">
-              <span>Disponible le 15/12</span>
+      @for (residence of ListResidences; track residence.slug){
+        <div class="col-12 col-md-6 col-lg-3 mb-4" >
+          <a [routerLink]="['/detail-bien' , residence.slug]" style="text-decoration: none;">
+            <div class="card" >
+              <div class="image-container" style="position: relative; width: 100%; height: 250px;">
+                <img [src]="residence.PictureResidences[0]" class="card-img-top" alt="..." style="width:100%; height: 250px;">
+                <div class="availability-badge">
+                  <span *ngIf="residence.available">Disponible</span>
+                  <span *ngIf="!residence.available">Disponible le 15/12</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{residence.name}}</h5>
+                <p class="card-text price"><i class="bi bi-cash-coin"></i> {{residence.price}} / nuit</p>
+              </div>
             </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence Nabil</h5>
-            <p class="card-text price">À partir de 15 000 FCFA / nuit</p>
-          </div>
-        </div>
-        </a>
-      </div>
-      <div class="col">
-        <a routerLink="/bien-palm" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/palm.jpg" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability">
-              <span>Disponible</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence Palm Club</h5>
-            <p class="card-text price">À partir de 30 000 FCFA / nuit</p>
-          </div>
-        </div>
-        </a>
-      </div>
-
-      <div class="col">
-        <a routerLink="/bien-palmeraie" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/palmeraie.jpg" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability">
-              <span>Disponible</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence La Palmeraie</h5>
-            <p class="card-text price">À partir de 20 000 FCFA / nuit</p>
-          </div>
-        </div>
-        </a>
-      </div>
-
-      <div class="col">
-        <a routerLink="/bien-almeda" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/almeda.png" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability-badge">
-              <span>Disponible le 16/12</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence Almeda</h5>
-            <p class="card-text price">À partir de 18 000 FCFA / nuit</p>
-          </div>
-        </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="row-separator" style="height: 40px;"></div>
-
-    <div class="row">
-      <div class="col">
-        <a routerLink="/bien-bonheur" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/bonheur.jpg" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability-badge">
-              <span>Disponible le 17/12</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence Le Bonheur</h5>
-            <p class="card-text price">À partir de 17 000 FCFA / nuit</p>
-          </div>
-        </div>
-        </a>
-      </div>
-
-      <div class="col">
-        <a routerLink="/bien-belle-vue" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/belleVue.JPEG" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability">
-              <span>Disponible</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence Belle Vue</h5>
-            <p class="card-text price">À partir de 25 500 FCFA / nuit</p>
-          </div>
-        </div>
-        </a>
-      </div>
-
-      <div class="col">
-        <a routerLink="/bien-palmiers" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/palmiers.jpg" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability">
-              <span>Disponible</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence les Palmiers</h5>
-            <p class="card-text price">À partir de 19 000 FCFA / nuit</p>
-          </div>
-        </div>
           </a>
-
-      </div>
-
-      <div class="col">
-        <a routerLink="/bien-cite-soleil" style="text-decoration: none;">
-        <div class="card" style="width: 18rem;">
-          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-            <img src="../assets/img/portfolio/citeSoleil.jpg" class="card-img-top" alt="..." style="width:100%; height:250px;">
-            <div class="availability-badge">
-              <span>Disponible le 16/12</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Résidence Cité Soleil</h5>
-            <p class="card-text price">À partir de 23 000 FCFA / nuit</p>
-          </div>
         </div>
-        </a>
-      </div>
+      }
     </div>
   </div>
 </section>
