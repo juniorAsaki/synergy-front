@@ -42,6 +42,16 @@ import {
 import {
   UpdateInfoOwnerComponent
 } from './presentation/features/space-owner/presentation/shared/update-info-owner/update-info-owner.component';
+import {
+  ListReservationCustomerComponent
+} from './presentation/features/space-client/presentation/layout/list-reservation-customer/list-reservation-customer.component';
+import {
+  DetailReservationCustomerComponent
+} from './presentation/features/space-client/presentation/layout/detail-reservation-customer/detail-reservation-customer.component';
+import {
+  InfosPersoCustomerComponent
+} from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
+import {MoyenPaiementComponent} from './presentation/components/shared/moyen-paiement/moyen-paiement.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -52,6 +62,7 @@ export const routes: Routes = [
   {path: "validate-email/:email" , component: ValidateEmailComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
   {path: "reservation-bien" , component: ReservationBienComponent},
+  {path: "paiement" , component: MoyenPaiementComponent},
   {path: "bien-almeda" , component: BienAlmedaComponent},
   {path: "bien-belle-vue" , component: BienBelleVueComponent},
   {path: "bien-bonheur" , component: BienBonheurComponent},
@@ -73,6 +84,8 @@ export const routes: Routes = [
     ]},
   {path: "customer" , component: BaseCustomerComponent ,
     children: [
-
+      {path: "list-reservation" , component: ListReservationCustomerComponent},
+      {path: "detail-reservation" , component: DetailReservationCustomerComponent},
+      {path: "infos" , component: InfosPersoCustomerComponent}
     ]}
 ];

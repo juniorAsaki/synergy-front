@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="table-container">
+    <h2 class="text-center mb-4">Liste des Réservations</h2>
+    <table class="table table-bordered table-striped table-hover text-center">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Bien</th>
+        <th>Localisation</th>
+        <th>Date de Début</th>
+        <th>Date de Fin</th>
+        <th>Statut</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>Appartement Luxueux</td>
+        <td>Paris, France</td>
+        <td>2024-11-20</td>
+        <td>2024-11-30</td>
+        <td><span class="badge bg-success">Confirmée</span></td>
+        <td>
+          <a [routerLink]="['/customer/detail-reservation']" class="btn btn-info btn-sm">Voir détails</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Villa Moderne</td>
+        <td>Nice, France</td>
+        <td>2024-12-01</td>
+        <td>2024-12-10</td>
+        <td><span class="badge bg-warning">En attente</span></td>
+        <td>
+          <a [routerLink]="['/customer/detail-reservation']" class="btn btn-info btn-sm">Voir détails</a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Chambre d'Hôtel</td>
+        <td>Lyon, France</td>
+        <td>2024-11-25</td>
+        <td>2024-11-27</td>
+        <td><span class="badge bg-danger">Annulée</span></td>
+        <td>
+          <a [routerLink]="['/customer/detail-reservation']" class="btn btn-info btn-sm">Voir détails</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
