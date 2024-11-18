@@ -1,76 +1,118 @@
-<header>
-  <a class="text-dark fw-bolder fs-4 p-0 mb-3 logo"  [routerLink]="['/home']" style="text-decoration:none">#SynergyImmo</a>
-</header>
-<main class="reservation-container">
-  <section class="reservation-details">
-    <h1 class="fw-bolder">Demande de réservation</h1><br>
-    <div class="voyage-info m-2">
-      <h2>Votre sejour</h2><br>
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="card reservation-card">
 
-      <div class="info-item">
-        <p>Dates de debut</p>
-        <p>11 nov.</p>
-      </div>
-      <div class="info-item">
-        <p>Dates de fin</p>
-        <p>15 nov.</p>
-      </div>
+    <div class="card-image mb-3">
+      <img src="assets/img/portfolio/palm.jpg" alt="Résidence" class="img-fluid w-100">
     </div>
-    <br>
-    <div class="payment-options">
-      <h2>Choisissez Le moyens de paiement</h2>
-      <form action="">
-        <div class="payment-grid">
-          <label class="payment-option">
-            <input type="checkbox" name="payment" value="wave">
-            <img src="assets/img/logos/Wave.jpg" alt="Wave">
-            <span>Wave</span>
-          </label>
 
-          <label class="payment-option">
-            <input type="checkbox" name="payment" value="orange-money">
-            <img src="assets/img/logos/orange.png" alt="Orange Money">
-            <span>Orange Money</span>
-          </label>
+    <div class="card-header text-center border-bottom bg-white py-4">
+      <h3 class="fw-bold mb-0">Détail de la résidence</h3>
+    </div>
 
-          <label class="payment-option">
-            <input type="checkbox" name="payment" value="mtn-mfs">
-            <img src="assets/img/logos/mtn.jpg" alt="MTN MFS CI">
-            <span>MTN money</span>
-          </label>
+    <div class="card-body">
 
-          <label class="payment-option">
-            <input type="checkbox" name="payment" value="moov-money">
-            <img src="assets/img/logos/moov.png" alt="Moov Money">
-            <span>Moov Money</span>
-          </label>
+      <div class="mb-5">
+        <h4 class="section-title">Commodités disponibles</h4>
+        <div class="row g-4">
+          <div class="col-md-4 col-6">
+            <div class="amenity-box">
+              <i class="fas fa-bed amenity-icon"></i>
+              <div class="amenity-count">2</div>
+              <div class="amenity-label">Chambres</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="amenity-box">
+              <i class="fas fa-utensils amenity-icon"></i>
+              <div class="amenity-count">1</div>
+              <div class="amenity-label">Salle à manger</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="amenity-box">
+              <i class="fas fa-umbrella-beach amenity-icon"></i>
+              <div class="amenity-count">1</div>
+              <div class="amenity-label">Terrasse</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="amenity-box">
+              <i class="fas fa-shower amenity-icon"></i>
+              <div class="amenity-count">2</div>
+              <div class="amenity-label">Douches</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="amenity-box">
+              <i class="fas fa-kitchen-set amenity-icon"></i>
+              <div class="amenity-count">1</div>
+              <div class="amenity-label">Cuisine</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="amenity-box">
+              <i class="fas fa-couch amenity-icon"></i>
+              <div class="amenity-count">1</div>
+              <div class="amenity-label">Salon</div>
+            </div>
+          </div>
         </div>
-        <button class="btn btn-outline-warning position-relative" style="left:20px">Paiement</button>
-      </form>
-    </div>
-  </section>
-  <aside class="reservation-summary">
-    <div class="room-info">
-      <img src="assets/img/portfolio/Image 1.jpeg" alt="Chambre avec accès piscine">
-      <div>
-        <h3>Chambre de la residence</h3>
+      </div>
 
+      <div class="mb-5">
+        <h4 class="section-title">Dates du séjour</h4>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="date-box">
+              <div class="mb-2">
+                <i class="fas fa-calendar-alt text-secondary"></i>
+                <span class="ms-2 fw-medium">Arrivée</span>
+              </div>
+              <div class="fs-5">20 Nov. 2024</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="date-box">
+              <div class="mb-2">
+                <i class="fas fa-calendar-alt text-secondary"></i>
+                <span class="ms-2 fw-medium">Départ</span>
+              </div>
+              <div class="fs-5">25 Nov. 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="duration-badge d-flex justify-content-between align-items-center mb-5">
+        <span class="fw-medium fs-5">Durée du séjour</span>
+        <span class="fs-5">5 nuits</span>
+      </div>
+
+      <div class="price-details">
+        <h4 class="section-title">Détails du prix</h4>
+        <div class="mb-3 d-flex justify-content-between fs-5">
+          <span>14,000 Fcfa x 5 nuits</span>
+          <span>70,000 Fcfa</span>
+        </div>
+        <div class="mb-4 d-flex justify-content-between fs-5">
+          <span>Frais de service Synergyimmo</span>
+          <span>100 Fcfa</span>
+        </div>
+        <hr class="my-4">
+        <div class="d-flex justify-content-between fw-bold fs-4">
+          <span>Total (Fcfa)</span>
+          <span>70,100 Fcfa</span>
+        </div>
       </div>
     </div>
-    <div class="price-details">
-      <h2>Détails du prix</h2>
-      <p>14,000 Fcfa x 5 nuits</p>
-      <p>70,000 Fcfa</p>
-      <p>Frais de service Synergyimmo</p>
-      <p>100 fcfa</p>
-      <hr>
-      <p>Total (Fcfa)</p>
-      <p>70 100 Fcfa</p>
 
-      <div class="button-container" style="margin-top: 20px;">
-        <button type="button" class="btn btn-primary" style="margin-right: 10px;">Confirmer</button>
-        <button type="button" class="btn btn-secondary">Annuler</button>
-      </div>
+    <div class="card-footer text-center p-4 bg-white">
+      <button type="button" class="btn btn-next">
+        Suivant
+        <i class="fas fa-arrow-right ms-2"></i>
+      </button>
     </div>
-  </aside>
-</main>
+  </div>
+</div>
+<app-footer></app-footer>

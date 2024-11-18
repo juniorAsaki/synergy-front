@@ -1,5 +1,4 @@
 
-/* Style for each field */
 .search-field {
   margin: 0 5px;
   padding: 15px;
@@ -13,12 +12,10 @@
   transition: background-color 0.3s;
 }
 
-/* Hover effect for each field */
 .search-field:hover {
   background-color: #e5e5e5;
 }
 
-/* Style for the search button */
 .search-button {
   background-color: #ffc800;
   border: none;
@@ -36,7 +33,6 @@
   border:2px solid #ffc800;
 }
 
-/* Icon in the search button */
 .search-button img {
   width: 20px;
   height: 20px;
