@@ -1,0 +1,28 @@
+.profile-container {
+  margin: 50px auto;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.profile-header {
+  background-color: #ffc107;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  text-align: center;
+}
+.form-container {
+  margin-top: 20px;
+}
+.form-label {
+  font-weight: bold;
+}
+.btn-save {
+  background-color: #ffc107;
+  border: none;
+}
+.btn-save:hover {
+  background-color: #e0a800;
+}

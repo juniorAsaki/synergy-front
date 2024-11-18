@@ -1,1 +1,66 @@
-<p>infos-owner works!</p>
+<div class="container">
+  <div class="profile-container">
+    <div class="profile-header">
+      <h2>Informations personnelles</h2>
+    </div>
+    <!-- Informations affichées -->
+    <div class="info-container mt-4">
+      <p><strong>Nom : </strong><span id="lastName">Dupont</span></p>
+      <p><strong>Prénom : </strong><span id="firstName">Jean</span></p>
+      <p><strong>Email : </strong><span id="email">jean.dupontexample.com</span></p>
+      <p><strong>Ville : </strong><span id="city">Paris</span></p>
+      <p><strong>Quartier : </strong><span id="district">Montmartre</span></p>
+      <p><strong>Téléphone : </strong><span id="phoneNumber">+33 6 12 34 56 78</span></p>
+      <p><strong>Sexe : </strong><span id="gender">Homme</span></p>
+      <p><strong>Compte vérifié : </strong>
+        <span id="verifiedCompte" class="badge bg-success">Oui</span>
+      </p>
+    </div>
+
+    <!-- Formulaire de mise à jour -->
+    <div class="form-container mt-4">
+      <h4 class="mb-3">Mettre à jour les informations</h4>
+      <form>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="updateFirstName" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="updateFirstName" placeholder="Jean" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="updateLastName" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="updateLastName" placeholder="Dupont" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="updateEmail" class="form-label">Email</label>
+            <input type="email" readonly="readonly" class="form-control" id="updateEmail" placeholder="jean.dupont@example.com" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="updatePhoneNumber" class="form-label">Téléphone</label>
+            <input type="tel" readonly="readonly" class="form-control" id="updatePhoneNumber" placeholder="+33 6 12 34 56 78" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="updateCity" class="form-label">Ville</label>
+            <input type="text" class="form-control" id="updateCity" placeholder="Paris" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="updateDistrict" class="form-label">Quartier</label>
+            <input type="text" class="form-control" id="updateDistrict" placeholder="Montmartre" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="updateGender" class="form-label">Sexe</label>
+          <select class="form-select" id="updateGender">
+            <option value="Homme" selected>Homme</option>
+            <option value="Femme">Femme</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-save btn-lg w-100">Enregistrer les modifications</button>
+      </form>
+    </div>
+  </div>
+</div>
