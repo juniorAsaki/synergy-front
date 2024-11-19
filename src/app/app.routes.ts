@@ -44,12 +44,14 @@ import {
   InfosPersoCustomerComponent
 } from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
 import {DetailBienComponent} from './presentation/pages/detail-bien/detail-bien.component';
+import {MoyenPaiementComponent} from './presentation/components/shared/moyen-paiement/moyen-paiement.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
   {path: "login" , component: LoginComponent},
   {path: "register" , component: RegisterComponent},
   {path: "biens" , component: ListBiensComponent},
+  {path: "paiement", component: MoyenPaiementComponent},
   {path: "" , redirectTo: "home" , pathMatch:"full"},
   {path: "validate-email/:email" , component: ValidateEmailComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
