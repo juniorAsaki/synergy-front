@@ -19,3 +19,9 @@ export interface Customer {
   phoneNumber: string,
   gender: string
 }
+
+export interface jwtPlayload {
+  auth:string,
+  id: number,
+  sub: string,
+}

@@ -1,8 +1,9 @@
 .reservation-card {
-  max-width: 800px;
   margin: 2rem auto;
   border-radius: 15px;
+  border:0;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display:flex;
 }
 .amenity-box {
   background-color: #f8f9fa;
@@ -33,7 +34,7 @@
   margin-top: 6px;
 }
 .btn-next {
-  background-color: #0d6efd;
+  background-color: #2c3e50;
   color: white;
   padding: 12px 30px;
   border-radius: 8px;
@@ -44,7 +45,7 @@
   transition: all 0.3s ease;
 }
 .btn-next:hover {
-  background-color: #0b5ed7;
+  background-color: rgba(44, 62, 80, 0.91);
   transform: translateY(-2px);
 }
 .date-box {

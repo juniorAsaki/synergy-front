@@ -112,8 +112,12 @@
   text-align: center;
 }
 
+.reserve-button {
+  background-color: #2c3e50;
+}
+
 .reserve-button:hover {
-  background-color: #e03d41;
+  background-color: rgba(44, 62, 80, 0.92);
 }
 
 .summary {
@@ -131,6 +135,87 @@ hr {
   margin: 20px 0;
   border-top: 1px solid #ddd;
 }
+
+
+
+.reservation-card {
+  margin: 2rem auto;
+  border-radius: 15px;
+  border:0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display:flex;
+}
+.amenity-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.amenity-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.amenity-icon {
+  font-size: 28px;
+  color: #0d6efd;
+  margin-bottom: 12px;
+}
+.amenity-count {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.amenity-label {
+  font-size: 16px;
+  color: #666;
+  margin-top: 6px;
+}
+.btn-next {
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+.btn-next:hover {
+  background-color: rgba(44, 62, 80, 0.91);
+  transform: translateY(-2px);
+}
+.date-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+}
+.duration-badge {
+  background-color: #e3f2fd;
+  color: #0d6efd;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.price-details {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+.card-body {
+  padding: 2rem;
+}
+
 
 @media (max-width: 992px) {
   .property-details-container {

@@ -3,6 +3,7 @@ import {RouterLink} from '@angular/router';
 import {BaseService} from '../../../../../../core/services/base.service';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {environment} from '../../../../../../../environments/environment.dev';
+import {Residence} from '../../../../../../domaine/interfaces/residence.interface';
 
 @Component({
   selector: 'app-add-biens',
@@ -26,22 +27,21 @@ export class AddBiensComponent implements OnInit{
   ngOnInit(): void {
 
     this.formResidence = this.fb.group({
-      name: this.fb.control(null , Validators.required),
-      price: this.fb.control(null , Validators.required),
-      description: this.fb.control(null , Validators.required),
-      NumberOfRooms: this.fb.control(null , Validators.required),
-      NumberOfShowers: this.fb.control(null , Validators.required),
-      NumberOfDiningRoom: this.fb.control(null , Validators.required),
-      NumberOfTerrace: this.fb.control(null , Validators.required),
-      NumberOfLounges: this.fb.control(null , Validators.required),
-      wifi: this.fb.control(null , Validators.required),
-      parking: this.fb.control(null , Validators.required),
-      catering: this.fb.control(null , Validators.required),
-      cleaning: this.fb.control(null , Validators.required),
-      available: this.fb.control(null , Validators.required),
-      city: this.fb.control(null , Validators.required),
-      district: this.fb.control(null , Validators.required),
-      availabilityDate: this.fb.control(null , Validators.required),
+      name: this.fb.control("Residence Nabil" , Validators.required),
+      price: this.fb.control("15000" , Validators.required),
+      description: this.fb.control("belle vue sur la lagune" , Validators.required),
+      rooms: this.fb.control("2" , Validators.required),
+      showers: this.fb.control("3" , Validators.required),
+      diningRoom: this.fb.control("1" , Validators.required),
+      terrace: this.fb.control("1" , Validators.required),
+      lounges: this.fb.control("1" , Validators.required),
+      wifi: this.fb.control(false , Validators.required),
+      parking: this.fb.control(true , Validators.required),
+      catering: this.fb.control(false , Validators.required),
+      cleaning: this.fb.control(true , Validators.required),
+      available: this.fb.control(false , Validators.required),
+      city: this.fb.control("Abidjan , Plateau" , Validators.required),
+      district: this.fb.control("Avenue Nogue" , Validators.required),
     });
 
   }
@@ -53,30 +53,52 @@ export class AddBiensComponent implements OnInit{
     }
   }
 
-  saveProperty(){
-    const formData = new FormData();
-    formData.append("name" , this.formResidence.value.name);
-    formData.append("price" , this.formResidence.value.price);
-    formData.append("description" , this.formResidence.value.description);
-    formData.append("NumberOfRooms" , this.formResidence.value.NumberOfRooms);
-    formData.append("NumberOfShowers" , this.formResidence.value.NumberOfShowers);
-    formData.append("NumberOfDiningRoom" , this.formResidence.value.NumberOfDiningRoom);
-    formData.append("NumberOfTerrace" , this.formResidence.value.NumberOfTerrace);
-    formData.append("NumberOfLounges" , this.formResidence.value.NumberOfLounges);
-    formData.append("wifi" , this.formResidence.value.wifi);
-    formData.append("parking" , this.formResidence.value.parking);
-    formData.append("catering" , this.formResidence.value.catering);
-    formData.append("cleaning" , this.formResidence.value.cleaning);
-    formData.append("available" , this.formResidence.value.available);
-    formData.append("city" , this.formResidence.value.city);
-    formData.append("district" , this.formResidence.value.district);
-    formData.append("availabilityDate" , this.formResidence.value.availabilityDate);
+  async saveProperty(): Promise<void> {
 
-    // Ajouter chaque fichier à FormData
-    this.selectedPictures.forEach((file, index) => {
-      formData.append('images', file);
-    });
+    const residence = {
+      name: this.formResidence.value.name,
+      price: this.formResidence.value.price,
+      description: this.formResidence.value.description,
+      rooms: +this.formResidence.value.rooms,
+      showers: +this.formResidence.value.showers,
+      diningRoom: +this.formResidence.value.diningRoom,
+      terrace: +this.formResidence.value.terrace,
+      lounges: +this.formResidence.value.lounges,
+      wifi: this.formResidence.value.wifi,
+      parking: this.formResidence.value.parking,
+      catering: this.formResidence.value.catering,
+      cleaning: this.formResidence.value.cleaning,
+      available: this.formResidence.value.available,
+      address: {
+        city: this.formResidence.value.city,
+        district: this.formResidence.value.district
+      }
+    }
 
+    try {
+      // 1. Enregistrer la résidence
+      const savedResidence: Residence = await this.baseService
+        .create(environment.endPoint.residence.save, residence)
+        .toPromise(); // Convertir l'observable en une promesse
 
+      console.log('Résidence enregistrée avec succès :', savedResidence);
+
+      // 2. Préparer le FormData pour les images
+      const formData = new FormData();
+      this.selectedPictures.forEach((file) => {
+        formData.append('pictures', file);
+      });
+
+      // 3. Enregistrer les images
+      const imageResponse = await this.baseService
+        .create(environment.endPoint.residence.savePicture, formData , savedResidence.id)
+        .toPromise();
+
+      console.log('Images enregistrées avec succès :', imageResponse);
+
+    } catch (error) {
+      console.error('Erreur lors de l\'enregistrement :', error);
+    }
   }
+
 }
