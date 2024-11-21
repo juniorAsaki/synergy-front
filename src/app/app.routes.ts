@@ -45,9 +45,13 @@ import {
 } from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
 import {DetailBienComponent} from './presentation/pages/detail-bien/detail-bien.component';
 import {MoyenPaiementComponent} from './presentation/components/shared/moyen-paiement/moyen-paiement.component';
+import {
+  PageAccueilReservationComponent
+} from './presentation/pages/page-accueil-reservation/page-accueil-reservation.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
+  {path: "home-reservation" , component: PageAccueilReservationComponent},
   {path: "login" , component: LoginComponent},
   {path: "register" , component: RegisterComponent},
   {path: "biens" , component: ListBiensComponent},
