@@ -1,0 +1,35 @@
+
+<form class="form-container d-flex flex-column m-auto mt-3 align-content-center" >
+       <h2 class="text-center">Information personnelle</h2>
+      <div class="col-md-6 m-auto">
+        <label for="name" class="form-label">Nom </label>
+        <input type="text" class="form-control py-3" id="name" name="name" placeholder="Nom" required>
+      </div>
+      <div class="col-md-6 m-auto">
+        <label for="name" class="form-label">Prenom </label>
+        <input type="text" class="form-control py-3 w-100" id="prenom" name="prenom" placeholder="prenom" required>
+      </div>
+      <div class="col-md-6 m-auto">
+        <label for="name" class="form-label">Telephone </label>
+        <input type="text" class="form-control py-3 w-100" id="phone" name="phone" placeholder="Telephone" required>
+      </div>
+      <div class="col-md-6 m-auto">
+        <label for="name" class="form-label">Email </label>
+        <input type="text" class="form-control py-3 w-100" id="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="mt-5 m-auto">
+      <div class="button-group">
+        <a [routerLink]="['/login']">
+          <button mat-raised-button class="btn btn-primary" >Creer un compte, reservez</button>
+        </a>
+      </div> <br>
+      <div class="button-group">
+        <a [routerLink]="['/reservation-bien']">
+          <button mat-raised-button class="btn btn-warning" >Reservez, sans compte</button>
+        </a>
+      </div>
+    </div>
+</form>
+
+
+
