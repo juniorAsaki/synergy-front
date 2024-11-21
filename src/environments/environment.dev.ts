@@ -14,6 +14,7 @@ export const environment = {
     },
     residence: {
       getAll: "api/v1/residences",
+      getPropertyOwner: "api/v1/owners/residences",
       getOne: "api/v1/residences/slug",
       save: "api/v1/owners/residences",
       savePicture: "api/v1/owners/picture-residences"

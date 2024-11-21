@@ -22,7 +22,6 @@ import {AsyncPipe, NgClass, NgForOf, NgIf, NgOptimizedImage} from '@angular/comm
 export class MainComponent implements OnInit{
 
   ListResidences = signal<Residence[]>([]);
-  listes!: Residence[];
 
   constructor(private baseService: BaseService) {
   }
