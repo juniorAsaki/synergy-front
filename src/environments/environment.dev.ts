@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8081',
+  baseUrl: '/host',
   endPoint: {
     login: {
       auth: "api/v1/authenticate"
@@ -13,10 +13,11 @@ export const environment = {
       resetPassword: "api/v1/users/reset-password",
     },
     residence: {
-      getAll: "api/v1/owner/residences",
-      getOne: "api/v1/owner/residence/slug",
-      save: "api/v1/owner/residences",
-      savePicture: "api/v1/owner/picture-residences"
+      getAll: "api/v1/residences",
+      getPropertyOwner: "api/v1/owners/residences",
+      getOne: "api/v1/residences/slug",
+      save: "api/v1/owners/residences",
+      savePicture: "api/v1/owners/picture-residences"
     }
   }
 }

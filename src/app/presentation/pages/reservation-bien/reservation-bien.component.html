@@ -1,118 +1,40 @@
 <app-nav-bar></app-nav-bar>
-<div class="container">
-  <div class="card reservation-card">
-
-    <div class="card-image mb-3">
-      <img src="assets/img/portfolio/palm.jpg" alt="Résidence" class="img-fluid w-100">
-    </div>
-
-    <div class="card-header text-center border-bottom bg-white py-4">
-      <h3 class="fw-bold mb-0">Détail de la résidence</h3>
-    </div>
-
-    <div class="card-body">
-
-      <div class="mb-5">
-        <h4 class="section-title">Commodités disponibles</h4>
-        <div class="row g-4">
-          <div class="col-md-4 col-6">
-            <div class="amenity-box">
-              <i class="fas fa-bed amenity-icon"></i>
-              <div class="amenity-count">2</div>
-              <div class="amenity-label">Chambres</div>
-            </div>
-          </div>
-          <div class="col-md-4 col-6">
-            <div class="amenity-box">
-              <i class="fas fa-utensils amenity-icon"></i>
-              <div class="amenity-count">1</div>
-              <div class="amenity-label">Salle à manger</div>
-            </div>
-          </div>
-          <div class="col-md-4 col-6">
-            <div class="amenity-box">
-              <i class="fas fa-umbrella-beach amenity-icon"></i>
-              <div class="amenity-count">1</div>
-              <div class="amenity-label">Terrasse</div>
-            </div>
-          </div>
-          <div class="col-md-4 col-6">
-            <div class="amenity-box">
-              <i class="fas fa-shower amenity-icon"></i>
-              <div class="amenity-count">2</div>
-              <div class="amenity-label">Douches</div>
-            </div>
-          </div>
-          <div class="col-md-4 col-6">
-            <div class="amenity-box">
-              <i class="fas fa-kitchen-set amenity-icon"></i>
-              <div class="amenity-count">1</div>
-              <div class="amenity-label">Cuisine</div>
-            </div>
-          </div>
-          <div class="col-md-4 col-6">
-            <div class="amenity-box">
-              <i class="fas fa-couch amenity-icon"></i>
-              <div class="amenity-count">1</div>
-              <div class="amenity-label">Salon</div>
-            </div>
-          </div>
-        </div>
+<div class="container-fluid d-flex align-items-center" style="margin-top:7rem">
+  <div class="card reservation-card d-flex border">
+      <div class="card-header text-center border-bottom bg-white py-4">
+        <h3 class="fw-bold mb-0">Détail de la résidence</h3>
       </div>
+        <div class="card-body d-flex align-items-center justify-content-center gap-4" >
+          <div class="d-flex flex-column">
+            <div class="duration-badge  mb-5">
+              <span class="fw-medium fs-5">Durée du séjour</span>
+              <span class="fs-5"> 5 nuits</span>
+            </div>
 
-      <div class="mb-5">
-        <h4 class="section-title">Dates du séjour</h4>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="date-box">
-              <div class="mb-2">
-                <i class="fas fa-calendar-alt text-secondary"></i>
-                <span class="ms-2 fw-medium">Arrivée</span>
+            <div class="price-details">
+              <h4 class="section-title">Détails du prix</h4>
+              <div class="mb-3 d-flex justify-content-between fs-5">
+                <span>Montant/Jour</span>
+                <span>70,000 Fcfa</span>
               </div>
-              <div class="fs-5">20 Nov. 2024</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="date-box">
-              <div class="mb-2">
-                <i class="fas fa-calendar-alt text-secondary"></i>
-                <span class="ms-2 fw-medium">Départ</span>
+              <div class="mb-4 d-flex justify-content-between fs-5">
+                <span>Frais de service Synergyimmo</span>
+                <span>100 Fcfa</span>
               </div>
-              <div class="fs-5">25 Nov. 2024</div>
+              <hr class="my-4">
+              <div class="d-flex justify-content-between fw-bold fs-4">
+                <span>Total (Fcfa)</span>
+                <span>70,100 Fcfa</span>
+              </div>
             </div>
           </div>
         </div>
+      <div class="card-footer text-center p-4 bg-white">
+        <a routerLink="/paiement"> <button type="button" class="btn btn-next">
+          Passer au Paiement
+          <i class="fas fa-arrow-right ms-2"></i>
+        </button></a>
       </div>
-
-      <div class="duration-badge d-flex justify-content-between align-items-center mb-5">
-        <span class="fw-medium fs-5">Durée du séjour</span>
-        <span class="fs-5">5 nuits</span>
-      </div>
-
-      <div class="price-details">
-        <h4 class="section-title">Détails du prix</h4>
-        <div class="mb-3 d-flex justify-content-between fs-5">
-          <span>14,000 Fcfa x 5 nuits</span>
-          <span>70,000 Fcfa</span>
-        </div>
-        <div class="mb-4 d-flex justify-content-between fs-5">
-          <span>Frais de service Synergyimmo</span>
-          <span>100 Fcfa</span>
-        </div>
-        <hr class="my-4">
-        <div class="d-flex justify-content-between fw-bold fs-4">
-          <span>Total (Fcfa)</span>
-          <span>70,100 Fcfa</span>
-        </div>
-      </div>
-    </div>
-
-     <div class="card-footer text-center p-4 bg-white">
-       <a routerLink="/paiement"> <button type="button" class="btn btn-next">
-        Suivant
-        <i class="fas fa-arrow-right ms-2"></i>
-      </button></a>
-    </div>
   </div>
 </div>
 <app-footer></app-footer>

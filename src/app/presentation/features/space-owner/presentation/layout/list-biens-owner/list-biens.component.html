@@ -4,141 +4,23 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4 border">
-      <div class="card" >
-        <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover"  alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover"  alt="...">
+    <div *ngFor="let residence of ListResidences(); trackBy: trackBySlug" class="col-12 col-md-6 col-lg-3 mb-4" >
+      <a [routerLink]="['/detail' , residence.slug]" style="text-decoration: none;">
+        <div class="card" >
+          <div class="image-container" style="position: relative; width: 100%; height: 250px;">
+            <img src="{{residence.images[0].imageUrl}}" class="card-img-top" alt="..." style="width:100%; height: 250px;"
+            >
+            <div [ngClass]="residence.available ? 'availability':'availability-badge'">
+              <span *ngIf="residence.available">Disponible</span>
+              <span *ngIf="!residence.available">Disponible le 15/12</span>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Nom du bien</h5>
-          <p class="card-text">Description du bien.</p>
-         <div class="table border">
-           <tbody >
-           <tr >
-             <td>prix</td>
-             <td>description</td>
-             <td>nombre de terrase</td>
-             <td>nombre de salle a manger</td>
-           </tr>
-           <tr>
-             <td>nom du bien</td>
-             <td>nombre de chambre</td>
-             <td>nombre de salons</td>
-           </tr>
-           </tbody>
-         </div>
-
-          <a href="#" class="btn btn-danger">Supprimer le bien</a>
-        </div>
-      </div>
-    </div> <div class="col-md-4 border">
-      <div class="card" >
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover"  alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover"  alt="...">
-            </div>
+          <div class="card-body">
+            <h5 class="card-title">{{residence.name}}</h5>
+            <p class="card-text price"><i class="bi bi-cash-coin"></i> {{residence.price}} / nuit</p>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Nom du bien</h5>
-          <p class="card-text">Description du bien.</p>
-         <div class="table border">
-           <tbody >
-           <tr >
-             <td>prix</td>
-             <td>description</td>
-             <td>nombre de terrase</td>
-             <td>nombre de salle a manger</td>
-           </tr>
-           <tr>
-             <td>nom du bien</td>
-             <td>nombre de chambre</td>
-             <td>nombre de salons</td>
-           </tr>
-           </tbody>
-         </div>
-
-          <a href="#" class="btn btn-danger">Supprimer le bien</a>
-        </div>
-      </div>
-    </div> <div class="col-md-4 border">
-      <div class="card" >
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover"  alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/portfolio/Image 2.jpeg" class="d-block " style="width:inherit;height:240px;object-fit: cover"  alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Nom du bien</h5>
-          <p class="card-text">Description du bien.</p>
-         <div class="table border">
-           <tbody >
-           <tr >
-             <td>prix</td>
-             <td>description</td>
-             <td>nombre de terrase</td>
-             <td>nombre de salle a manger</td>
-           </tr>
-           <tr>
-             <td>nom du bien</td>
-             <td>nombre de chambre</td>
-             <td>nombre de salons</td>
-           </tr>
-           </tbody>
-         </div>
-
-          <a href="#" class="btn btn-danger">Supprimer le bien</a>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 

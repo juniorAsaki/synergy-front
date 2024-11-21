@@ -18,8 +18,8 @@ export class BaseService {
     return this.httpClient.get(url);
   }
 
-  getAll(endPoint: string): Observable<any>{
-    const url = `${this.baseUrl}/${endPoint}`;
+  getAll(endPoint: string , id?: any): Observable<any>{
+    const url = id != null ? `${this.baseUrl}/${endPoint}/${id}` : `${this.baseUrl}/${endPoint}`;
     return this.httpClient.get(url);
   }
 

@@ -1,28 +1,30 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {Residence} from '../../../../domaine/interfaces/residence.interface';
 import {BaseService} from '../../../../core/services/base.service';
 import {environment} from '../../../../../environments/environment.dev';
-import {errorContext} from 'rxjs/internal/util/errorContext';
-import {NgIf} from '@angular/common';
+import {AsyncPipe, NgClass, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-main',
   standalone: true,
   imports: [
     RouterLink,
-    NgIf
+    NgIf,
+    NgClass,
+    NgOptimizedImage,
+    AsyncPipe,
+    NgForOf
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit{
 
-  ListResidences!: Residence[];
+  ListResidences = signal<Residence[]>([]);
 
   constructor(private baseService: BaseService) {
   }
-
 
   ngOnInit(): void {
     this.getAllResidence();
@@ -30,9 +32,19 @@ export class MainComponent implements OnInit{
 
   getAllResidence() {
     this.baseService.getAll(environment.endPoint.residence.getAll).subscribe({
-      next: value => this.ListResidences = value,
+      next: (value: Residence[]) => {
+        this.ListResidences.update(v => v = value.slice(0,4))
+        console.log(this.ListResidences())
+      },
       error: err => console.error(err)
     })
+
+
   }
+
+  trackBySlug(index: number, residence: any): string {
+    return residence.slug;
+  }
+
 
 }

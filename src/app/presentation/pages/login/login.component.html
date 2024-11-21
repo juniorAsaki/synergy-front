@@ -1,4 +1,5 @@
 <section class="h-100 gradient-form" style="background-color: #eee;">
+  <p-toast />
   <div class="container py-5 h-100 bg-warning" style="margin-top: -5rem">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
@@ -20,7 +21,7 @@
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="form2Example22" class="form-control" formControlName="password" placeholder="****"/>
+                    <input  [class.is-invalid]="error" type="password" id="form2Example22" class="form-control" formControlName="password" placeholder="****"/>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
