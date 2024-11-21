@@ -4,37 +4,43 @@ import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../../environments/environment.dev';
 import {map, Observable} from 'rxjs';
-import {AuthResponse} from '../../domaine/interfaces/user.interface';
+import {AuthResponse, jwtPlayload} from '../../domaine/interfaces/user.interface';
+import {jwtDecode, JwtPayload} from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  id_token!: string | null;
+  private baseUrl: string = environment.baseUrl;
+
+  AuthenticateSate =  {
+    userID:0,
+    email: "",
+    isAuthenticated: false,
+    roles: ""
+  }
+
+
   constructor(
     private localStorageService: LocalStorageService,
     private router: Router,
     private httpClient: HttpClient
-  ) { }
+  ) {
+
+    this.loadProfil();
+  }
 
 
   isAuthenticated(): boolean{
     return !!this.localStorageService.getToken();
   }
 
-  login(credential: {username: string , password: string}): Observable<any>{
 
-    let options: {headers: HttpHeaders} = {
-      headers: new HttpHeaders().set("Context-Type", "application/json")
-    }
-
-    let params: HttpParams = new HttpParams().set("username" , credential.username).set("password" , credential.password);
-
-    return this.httpClient.post<AuthResponse>(`${environment.endPoint.login}`, params , options).pipe(
-      map(response => {
-        this.localStorageService.saveToken(response.id_token)
-      })
-    )
+  login(endPoint: string , data: any ): Observable<any>{
+    const url =  `${this.baseUrl}/${endPoint}`;
+    return this.httpClient.post<AuthResponse>(url , data);
   }
 
   logout(){
@@ -43,4 +49,19 @@ export class AuthService {
   }
 
 
+  loadProfil() {
+    this.id_token = this.localStorageService.getToken();
+
+    if (this.id_token != null) {
+      let decodeJwt: jwtPlayload = jwtDecode(this.id_token);
+
+      this.AuthenticateSate.userID = decodeJwt.id;
+      this.AuthenticateSate.isAuthenticated = this.isAuthenticated();
+      this.AuthenticateSate.email = decodeJwt.sub;
+      this.AuthenticateSate.roles = decodeJwt.auth;
+
+    }
+
+    console.log(this.AuthenticateSate);
+  }
 }

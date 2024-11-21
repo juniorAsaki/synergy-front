@@ -4,13 +4,14 @@
       <h2 class="section-heading text-uppercase">Nos derniers biens</h2>
     </div>
     <div class="row">
-      @for (residence of ListResidences; track residence.slug){
-        <div class="col-12 col-md-6 col-lg-3 mb-4" >
-          <a [routerLink]="['/detail-bien' , residence.slug]" style="text-decoration: none;">
+
+        <div *ngFor="let residence of ListResidences(); trackBy: trackBySlug" class="col-12 col-md-6 col-lg-3 mb-4" >
+          <a [routerLink]="['/detail' , residence.slug]" style="text-decoration: none;">
             <div class="card" >
               <div class="image-container" style="position: relative; width: 100%; height: 250px;">
-                <img [src]="residence.PictureResidences[0]" class="card-img-top" alt="..." style="width:100%; height: 250px;">
-                <div class="availability-badge">
+                <img src="{{residence.images[0].imageUrl}}" class="card-img-top" alt="..." style="width:100%; height: 250px;"
+                     >
+                <div [ngClass]="residence.available ? 'availability':'availability-badge'">
                   <span *ngIf="residence.available">Disponible</span>
                   <span *ngIf="!residence.available">Disponible le 15/12</span>
                 </div>
@@ -22,8 +23,9 @@
             </div>
           </a>
         </div>
-      }
+
     </div>
+    <a style="position:relative;transform:translateX(150%)" [routerLink]="['/biens']" class="btn btn-outline-warning py-3 w-25" >Voir tout les biens</a>
   </div>
 </section>
 

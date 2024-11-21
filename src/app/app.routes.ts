@@ -45,26 +45,25 @@ import {
 } from './presentation/features/space-client/presentation/layout/infos-perso-customer/infos-perso-customer.component';
 import {DetailBienComponent} from './presentation/pages/detail-bien/detail-bien.component';
 import {MoyenPaiementComponent} from './presentation/components/shared/moyen-paiement/moyen-paiement.component';
-import {
-  PageAccueilReservationComponent
-} from './presentation/pages/page-accueil-reservation/page-accueil-reservation.component';
+import {AuthGuard} from './core/guards/auth.guard';
+import {LoginPageGuard} from './core/guards/login.guard';
+import {AuthorizationGuard} from './core/guards/roleAuth.guard';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
-  {path: "home-reservation" , component: PageAccueilReservationComponent},
-  {path: "login" , component: LoginComponent},
+  {path: "login" , component: LoginComponent },
   {path: "register" , component: RegisterComponent},
   {path: "biens" , component: ListBiensComponent},
   {path: "paiement", component: MoyenPaiementComponent},
   {path: "" , redirectTo: "home" , pathMatch:"full"},
   {path: "validate-email/:email" , component: ValidateEmailComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
-  {path: "reservation-bien" , component: ReservationBienComponent},
+  {path: "reservation-bien/:slug" , component: ReservationBienComponent},
   {path: "detail/:slug" , component: DetailBienComponent},
-  {path: "admin" , component: BaseAdminComponent , children: [
+  {path: "admin" , component: BaseAdminComponent , canActivate: [AuthGuard , AuthorizationGuard] , data: {role: "ADMIN"}, children: [
       {path: "dashboard" , component: DashboardComponent}
     ]},
-  {path: "owner" , component: BaseOwnerComponent , children: [
+  {path: "owner" , component: BaseOwnerComponent ,canActivate: [AuthGuard , AuthorizationGuard] , data: {role: "OWNER"},  children: [
       {path: "list-reservation" , component: ListReservationComponent},
       {path: "list-biens" , component: ListBiensOwnerComponent},
       {path: "add-bien" , component: AddBiensComponent},
@@ -72,7 +71,7 @@ export const routes: Routes = [
       {path: "update-owner" , component: UpdateInfoOwnerComponent}
 
     ]},
-  {path: "customer" , component: BaseCustomerComponent ,
+  {path: "customer" , component: BaseCustomerComponent , canActivate: [AuthGuard , AuthorizationGuard],  data: {role: "CUSTOMER"},
     children: [
       {path: "list-reservation" , component: ListReservationCustomerComponent},
       {path: "detail-reservation" , component: DetailReservationCustomerComponent},

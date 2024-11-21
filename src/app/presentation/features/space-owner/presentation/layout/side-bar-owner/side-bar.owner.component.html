@@ -1,20 +1,28 @@
-<header class="d-flex justify-content-between">
-  <div class="row">
-    <a [routerLink]="['/home']" class="text-dark fw-bolder fs-4 p-0 mb-3 logo"   style="text-decoration:none">#SynergyImmo</a>
-  </div>
-  <ul class="d-flex">
-    <li><a [routerLink]="['/owner/list-reservation']" style="color:#fff">Liste des reservations</a></li>
-    <li><a [routerLink]="['/owner/list-biens']"  style="color:#fff">Gestion des biens</a></li>
-  </ul>
-  <ul class="user">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-person-circle"></i>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" [routerLink]="['/owner/profil']">Profil</a></li>
-        <li><a class="dropdown-item" href="#">Déconnection</a></li>
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand text-warning" [routerLink]="['/home']">#SynergyImmo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/owner/list-reservation']">Liste des reservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/owner/list-biens']" >Gestion des biens</a>
+        </li>
+
       </ul>
-    </li>
-  </ul>
-</header>
+      <div class="dropdown">
+        <a class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-circle"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+          <li><a class="dropdown-item" [routerLink]="['/owner/profil']">Profil</a></li>
+          <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

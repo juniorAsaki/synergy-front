@@ -1,85 +1,93 @@
+/* Container principal */
 .form-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 5px solid #ffc800;
+
+}
+
+/* Tabs (Vol, Séjour, etc.) */
+.tabs {
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab {
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.tab.active {
+  color: #2c3e50;
+}
+
+/* Champs de recherche */
+.search-fields {
+  display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  background-color: #f9f9f9;
+  gap: 15px;
+  width: 900px;
+}
+
+.field {
+  flex: 1 1 calc(25% - 15px);
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.field input {
   padding: 15px;
-  border: 2px solid #ffbb00;
-  border-radius: 12px;
-  max-width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight:bolder;
+  outline:none;
+  margin-right:10px;
 }
 
-.form-container div {
-  flex: 1 1 150px;
-  min-width: 160px;
-}
 
-.form-container input,
-.form-container select,
-.form-container button {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-size: 1em;
-  transition: all 0.3s ease;
-}
 
-.form-container input:hover,
-.form-container select:hover {
-  border-color: #ffbb00;
-  box-shadow: 0 2px 4px rgba(255, 187, 0, 0.2);
-}
-
-.form-container button {
-  background-color: #ffbb00;
-  color: #111;
+.search-button .btn {
+  background-color: #ffc800;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: bold;
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
 }
 
-.form-container button:hover {
-  background-color: #fff;
-  border: 2px solid #ffbb00;
-  color: #111;
-  box-shadow: 0 2px 6px rgba(255, 187, 0, 0.4);
+.search-button .btn:hover {
+  background-color: rgba(255, 200, 0, 0.82);
 }
 
-
-.form-container input[type="rechercher"] {
-  width: 80%;
-  padding: 8px;
-  font-size: 0.9em;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
+#destination{
+  padding: 25px 0;
 }
 
+/* Réactivité */
+@media (max-width: 768px) {
+  .search-fields {
+    flex-direction: column;
+  }
 
-.form-container button {
-  padding: 8px 12px;
-  font-size: 0.9em;
+  .field {
+    flex: 1 1 100%;
+  }
 }
-
-
-.search-container {
-  position: relative;
-}
-
-.search-bar {
-  padding-right: 40px;
-}
-
-.search-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #777;
-}
-

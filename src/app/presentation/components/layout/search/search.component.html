@@ -1,9 +1,15 @@
 <div class="form-container">
+  <form action="/search" method="GET" class="search-form d-flex align-items-center">
+    <!-- Champs de recherche -->
+    <div class="search-fields">
+      <div class="field">
+        <input  type="text" id="destination" name="destination" placeholder="Rechercher un bien" required>
+      </div>
+    </div>
 
-  <div class="search-container input-group">
-    <input type="text" class="form-control search-bar" placeholder="Rechercher votre residence...">
-    <span class="input-group-text search-icon">
-    <i class="fas fa-search"></i>
-    </span>
-  </div>
+    <!-- Bouton de recherche -->
+    <div class="search-button">
+      <button id="search" type="submit" class="btn btn-primary"><i class="bi bi-search fs-2"></i></button>
+    </div>
+  </form>
 </div>

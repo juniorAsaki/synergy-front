@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
-    <a class="navbar-brand text-dark" [routerLink]="['/home']">#SynergyImmo</a>
+    <a class="navbar-brand text-warning" [routerLink]="['/home']">#SynergyImmo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,9 +12,9 @@
 
       </ul>
       <div class="dropdown">
-        <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle"></i>
-        </button>
+        </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
           <li><a class="dropdown-item" [routerLink]="['/customer/infos']">Profil</a></li>
           <li><a class="dropdown-item" href="#">Déconnexion</a></li>

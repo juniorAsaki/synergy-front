@@ -21,7 +21,7 @@
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="email" id="lastName" class="form-control"
-                           placeholder="seugban" formControlName="lastName" />
+                           placeholder="nom" formControlName="lastName" />
                     @if (isInvalidaedInput(formGroup.controls['lastName'])){
                       <small class="text-danger">
                         le Nom est requis
@@ -31,7 +31,7 @@
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="email" id="firstName" class="form-control"
-                           placeholder="ange-berthe"  formControlName="firstName"/>
+                           placeholder="prenom"  formControlName="firstName"/>
                     @if (isInvalidaedInput(formGroup.controls['firstName'])){
                       <small class="text-danger">
                         le Prenom est requis
@@ -41,8 +41,7 @@
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="email" id="form2Example11" class="form-control"
-                           [ngClass]="isInvalidaedInput(formGroup.controls['email']) ? 'invalid-feedback':''"
-                           placeholder="jncho@gmail.com" required formControlName="email"/>
+                           placeholder="email" required formControlName="email"/>
                     @if (isInvalidaedInput(formGroup.controls['email'])){
                       <small class="text-danger">
                         email est requis
