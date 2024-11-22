@@ -60,10 +60,10 @@ export const routes: Routes = [
   {path: "reset-password-first" , component: ResetPassword1Component},
   {path: "reservation-bien/:slug" , component: ReservationBienComponent},
   {path: "detail/:slug" , component: DetailBienComponent},
-  {path: "admin" , component: BaseAdminComponent , children: [
+  {path: "admin" , component: BaseAdminComponent , canActivate: [AuthGuard] , children: [
       {path: "dashboard" , component: DashboardComponent}
     ]},
-  {path: "owner" , component: BaseOwnerComponent ,  children: [
+  {path: "owner" , component: BaseOwnerComponent , canActivate: [AuthGuard] ,   children: [
       {path: "list-reservation" , component: ListReservationComponent},
       {path: "list-biens" , component: ListBiensOwnerComponent},
       {path: "add-bien" , component: AddBiensComponent},
@@ -71,7 +71,7 @@ export const routes: Routes = [
       {path: "update-owner" , component: UpdateInfoOwnerComponent}
 
     ]},
-  {path: "customer" , component: BaseCustomerComponent ,
+  {path: "customer" , component: BaseCustomerComponent , canActivate: [AuthGuard]  ,
     children: [
       {path: "list-reservation" , component: ListReservationCustomerComponent},
       {path: "detail-reservation" , component: DetailReservationCustomerComponent},

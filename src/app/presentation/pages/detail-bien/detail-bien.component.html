@@ -1,4 +1,5 @@
 <div class="property-details-container">
+  <p-toast/>
   <div class="gallery">
     <div class="carousel-container">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -16,7 +17,7 @@
         <img src="{{residence().images[0].imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name">
       </div>
       <div class="col">
-        <img src="{{residence().images[0].imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name" >
+        <img src="{{residence().images[1].imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name" >
       </div>
     </div>
   </div>
@@ -44,7 +45,60 @@
         <p><strong>Total à payer : {{sejour().dateDepart.length == 0 ? 0:sejour().TotalPay}}</strong></p>
       </div>
 
-      <a class="reserve-button text-decoration-none mt-3" data-bs-toggle="modal" data-bs-target="#reservation" >Réserver</a>
+<!--      <a  class="reserve-button text-decoration-none mt-3"  >Réserver</a>-->
+      <p-button (onClick)="showDialog()" label="Réserver" />
+
+      <div class="card flex justify-content-center">
+        <p-dialog header="Edit Profile" [(visible)]="visible" [style]="{ width: '45rem' }">
+          <!-- Details reservation -->
+          <ng-container>
+            <div  >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="fw-bold mb-0">Details de la reservation</h3>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card-body d-flex align-items-center justify-content-center gap-4" >
+                      <div class="d-flex flex-column border w-100">
+                        <div class="duration-badge  mb-5 w-100 border py-4">
+                          <span class="fw-medium fs-5">Durée du séjour</span>
+                          <span class="fs-5"> {{sejour().nbresDays}} nuits</span>
+                        </div>
+
+                        <div class="price-details">
+                          <h4 class="section-title">Détails du prix</h4>
+                          <div class="mb-3 d-flex justify-content-between fs-5">
+                            <span>Montant/Jour</span>
+                            <span>{{sejour().TotalPay}} Fcfa</span>
+                          </div>
+                          <div class="mb-4 d-flex justify-content-between fs-5">
+                            <span>Frais de service Synergyimmo</span>
+                            <span>100 Fcfa</span>
+                          </div>
+                          <hr class="my-4">
+                          <div class="d-flex justify-content-between fw-bold fs-4">
+                            <span>Total (Fcfa)</span>
+                            <span>{{ sejour().TotalPayWithFrais }} Fcfa</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <a (click)="goToPaiement()" data-bs-dismiss="modal" class="btn btn-next" type="button">
+                      Passer au Paiement
+                      <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+        </p-dialog>
+      </div>
+
     </div>
   </div>
 </div>
@@ -112,52 +166,6 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>      </div>
-      </div>
-    </div>
-  </div>
-</ng-container>
-<!-- Details reservation -->
-<ng-container>
-  <div class="modal fade" id="reservation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="fw-bold mb-0">Details de la reservation</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="card-body d-flex align-items-center justify-content-center gap-4" >
-            <div class="d-flex flex-column border w-100">
-              <div class="duration-badge  mb-5 w-100 border py-4">
-                <span class="fw-medium fs-5">Durée du séjour</span>
-                <span class="fs-5"> {{sejour().nbresDays}} nuits</span>
-              </div>
-
-              <div class="price-details">
-                <h4 class="section-title">Détails du prix</h4>
-                <div class="mb-3 d-flex justify-content-between fs-5">
-                  <span>Montant/Jour</span>
-                  <span>{{sejour().TotalPay}} Fcfa</span>
-                </div>
-                <div class="mb-4 d-flex justify-content-between fs-5">
-                  <span>Frais de service Synergyimmo</span>
-                  <span>100 Fcfa</span>
-                </div>
-                <hr class="my-4">
-                <div class="d-flex justify-content-between fw-bold fs-4">
-                  <span>Total (Fcfa)</span>
-                  <span>{{ sejour().TotalPayWithFrais }} Fcfa</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <a routerLink="/paiement" class="btn btn-next" type="button">
-            Passer au Paiement
-            <i class="fas fa-arrow-right ms-2"></i>
-          </a>
-        </div>
       </div>
     </div>
   </div>

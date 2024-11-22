@@ -20,7 +20,7 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
           <li><a class="dropdown-item" [routerLink]="['/owner/profil']">Profil</a></li>
-          <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+          <li><a class="dropdown-item" (click)="logout()">Déconnexion</a></li>
         </ul>
       </div>
     </div>

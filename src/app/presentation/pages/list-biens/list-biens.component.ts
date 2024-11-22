@@ -9,9 +9,10 @@ import {SearchComponent} from '../../components/layout/search/search.component';
 import {NavBarComponent} from '../../components/layout/nav-bar/nav-bar.component';
 import {GoogleMapDemoComponent} from '../google-map-demo/google-map-demo.component';
 import {RouterLink} from '@angular/router';
-import {Residence} from '../../../domaine/interfaces/residence.interface';
+import {PageResidence, Residence} from '../../../domaine/interfaces/residence.interface';
 import {BaseService} from '../../../core/services/base.service';
 import {environment} from '../../../../environments/environment.dev';
+import {Observable, of} from 'rxjs';
 
 
 declare var google: any;
@@ -41,15 +42,19 @@ interface Property {
   templateUrl: './list-biens.component.html',
   styleUrl: './list-biens.component.scss'
 })
-export class ListBiensComponent  {
+export class ListBiensComponent  implements OnInit {
 
   ListResidences = signal<Residence[]>([]);
+  currentPaage = 0;
+  pageSize: number = 9;
+  totalPage: number = 0;
 
   constructor(private baseService: BaseService) {
   }
 
   ngOnInit(): void {
     this.getAllResidence();
+    this.getPageResidence(this.currentPaage , this.pageSize)
   }
 
   getAllResidence() {
@@ -59,8 +64,21 @@ export class ListBiensComponent  {
       },
       error: err => console.error(err)
     })
+  }
 
+  getPageResidence(page: number , size: number): Observable<PageResidence> {
 
+    let index = page * size;
+
+    let totalPage = Math.ceil(page / size);
+
+    if(this.ListResidences().length % size != 0) {
+      totalPage++;
+    }
+
+    let pageResidences = this.ListResidences().slice(index , index+size);
+
+    return of({page:page , size:size , totalPage:totalPage , residences:pageResidences});
   }
 
 

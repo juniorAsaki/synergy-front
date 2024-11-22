@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
+import {LocalStorageService} from '../../../../../../core/services/local-storage.service';
 
 @Component({
   selector: 'app-side-bar-owner',
@@ -13,4 +14,10 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 })
 export class SideBarOwnerComponent {
 
+  constructor(private router: Router , private localStorage: LocalStorageService) { }
+
+  logout() {
+    this.localStorage.removeToken();
+    this.router.navigateByUrl('/login');
+  }
 }

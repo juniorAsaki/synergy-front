@@ -3,13 +3,16 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterLink} from '@angular/router';
 import {BaseService} from '../../../core/services/base.service';
 import {environment} from '../../../../environments/environment.dev';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 @Component({
   selector: 'app-validate-email',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    ToastModule
   ],
   templateUrl: './validate-email.component.html',
   styleUrl: './validate-email.component.scss'
@@ -19,7 +22,7 @@ export class ValidateEmailComponent implements OnInit{
   otpForm!: FormGroup;
   email!: string;
 
-  constructor(private route: ActivatedRoute , private fb: FormBuilder , private baseService: BaseService , private router: Router) {
+  constructor(private ms: MessageService , private route: ActivatedRoute , private fb: FormBuilder , private baseService: BaseService , private router: Router) {
   }
 
   ngOnInit(): void {
@@ -53,6 +56,7 @@ export class ValidateEmailComponent implements OnInit{
     console.log(EmailCode);
     this.baseService.create(environment.endPoint.register.verifyCountUser, EmailCode).subscribe({
       next: value => {
+        this.ms.add({ severity: 'success', summary: 'success', detail: 'Compte Validé, Inscription réussie !' , life: 3000});
         this.router.navigateByUrl("/login");
       },
       error: err => {

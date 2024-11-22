@@ -4,6 +4,8 @@ import {AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators
 import {BaseService} from '../../../core/services/base.service';
 import {environment} from '../../../../environments/environment.dev';
 import {NgClass} from '@angular/common';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +13,8 @@ import {NgClass} from '@angular/common';
   imports: [
     RouterLink,
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    ToastModule
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
@@ -21,7 +24,7 @@ export class RegisterComponent implements OnInit{
 
   formGroup !: FormGroup;
 
-  constructor(private fb: FormBuilder , private router: Router , private baseService: BaseService) {
+  constructor(private ms: MessageService , private fb: FormBuilder , private router: Router , private baseService: BaseService) {
   }
 
   ngOnInit(): void {
@@ -52,6 +55,7 @@ export class RegisterComponent implements OnInit{
 
     this.baseService.create(environment.endPoint.register.owner , owner).subscribe({
       next: value => {
+        this.ms.add({ severity: 'success', summary: 'success', detail: 'Vous allez recevoir un code !' , life: 3000});
         this.router.navigate(["/validate-email" , this.formGroup.value.email]);
       },
       error: err => {

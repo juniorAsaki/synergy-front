@@ -1,20 +1,17 @@
 <section class="h-100 gradient-form" style="background-color: #eee;">
   <p-toast />
-  <div class="container py-5 h-100 bg-warning" style="margin-top: -5rem">
+  <div class="container py-5 h-100" style="margin-top: -5rem;background-color:#2c3e50">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
         <div class="card rounded-3 text-black" style="margin-top: 8rem">
           <div class="row g-0" >
             <div class="col-lg-6">
               <div class="card-body p-md-5 mx-md-4">
-
                 <div class="text-center">
-
                   <h4 class="mt-1 mb-5 pb-1">Connecte toi sur SynergyImmo</h4>
                 </div>
 
                 <form  (ngSubmit)="login()" [formGroup]="formGroup">
-
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="email" id="form2Example11" class="form-control"
                            placeholder="jncho@gmail.com" formControlName="email" />
@@ -25,7 +22,7 @@
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button  class="btn btn-warning btn-block fa-lg  mb-3 me-3" type="submit">Se connecter</button>
+                    <button  class="btn btn-warning text-light btn-block fa-lg  mb-3 me-3" type="submit">Se connecter</button>
                     <a class="text-muted" [routerLink]="['/reset-password-first']">Forgot password?</a>
                   </div>
 
@@ -33,15 +30,13 @@
                     <p class="mb-0 me-2">Vous n'avez pas de compte?</p>
                     <a [routerLink]="['/register']"  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-warning">Creer un compte</a>
                   </div>
-
                 </form>
-
               </div>
             </div>
-            <div class="col-lg-6 d-flex align-items-center bg-warning">
+            <div class="col-lg-6 d-flex align-items-center" style="background-color:#2c3e50;">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h1><a class="text-dark fw-bolder" [routerLink]="['/home']" style="text-decoration:none">#SynergyImmo</a></h1>
-                <h4 class="mb-4 text-dark">Connectez-vous pour découvrir un monde incroyable !</h4>
+                <h1><a class="text-warning fw-bolder" [routerLink]="['/home']" style="text-decoration:none;">#SynergyImmo</a></h1>
+                <h4 class="mb-4 text-light">Connectez-vous pour découvrir un monde incroyable !</h4>
               </div>
             </div>
           </div>

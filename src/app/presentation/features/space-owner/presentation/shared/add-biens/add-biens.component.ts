@@ -4,13 +4,16 @@ import {BaseService} from '../../../../../../core/services/base.service';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {environment} from '../../../../../../../environments/environment.dev';
 import {Residence} from '../../../../../../domaine/interfaces/residence.interface';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 @Component({
   selector: 'app-add-biens',
   standalone: true,
   imports: [
     RouterLink,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule
   ],
   templateUrl: './add-biens.component.html',
   styleUrl: './add-biens.component.scss'
@@ -21,7 +24,7 @@ export class AddBiensComponent implements OnInit{
   selectedPictures: File[] = [];
 
 
-  constructor(private baseService: BaseService , private fb: FormBuilder) {
+  constructor(private ms: MessageService , private baseService: BaseService , private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -94,7 +97,7 @@ export class AddBiensComponent implements OnInit{
         .create(environment.endPoint.residence.savePicture, formData , savedResidence.id)
         .toPromise();
 
-      console.log('Images enregistrées avec succès :', imageResponse);
+      this.ms.add({ severity: 'success', summary: 'success', detail: 'Propriété enregistré avec succèss !' , life: 3000});
 
     } catch (error) {
       console.error('Erreur lors de l\'enregistrement :', error);

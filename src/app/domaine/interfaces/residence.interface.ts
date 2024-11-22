@@ -21,3 +21,10 @@ export interface Residence {
   availabilityDate: Date
   images: {imageUrl:string}[]
 }
+
+export interface PageResidence {
+  size: number;
+  totalPage: number;
+  page: number;
+  residences: Residence[]
+}

@@ -1,11 +1,14 @@
-import {Component, OnInit, signal} from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
+import {Component, ElementRef, OnInit, signal, ViewChild} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {BaseService} from '../../../core/services/base.service';
 import {Residence} from '../../../domaine/interfaces/residence.interface';
 import {environment} from '../../../../environments/environment.dev';
 import {FormsModule} from '@angular/forms';
 import {SharedDataServiceService} from '../../../core/services/shared-data-service.service';
-import {LocalStorageService} from '../../../core/services/local-storage.service';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
+import {Button} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
 
 @Component({
   selector: 'app-detail-bien',
@@ -13,11 +16,15 @@ import {LocalStorageService} from '../../../core/services/local-storage.service'
   imports: [
     RouterLink,
     FormsModule,
+    ToastModule,
+    Button,
+    DialogModule,
   ],
   templateUrl: './detail-bien.component.html',
   styleUrl: './detail-bien.component.scss'
 })
 export class DetailBienComponent implements OnInit{
+  visible: boolean = false;
 
   residence = signal<any>("");
 
@@ -30,7 +37,7 @@ export class DetailBienComponent implements OnInit{
   })
 
 
-  constructor(private baseService: BaseService , private route: ActivatedRoute , private sd: SharedDataServiceService) {
+  constructor(private ms: MessageService , private router: Router , private baseService: BaseService , private route: ActivatedRoute , private sd: SharedDataServiceService) {
   }
 
   ngOnInit(): void {
@@ -64,7 +71,26 @@ export class DetailBienComponent implements OnInit{
 
   }
 
-  protected readonly NaN = NaN;
-  protected readonly isNaN = isNaN;
-  protected readonly Number = Number;
+
+  goToPaiement() {
+    this.router.navigateByUrl('/paiement');
+  }
+
+  // goToDetailReservation() {
+  //
+  //   if (this.sejour().dateArrive == "" && this.sejour().dateArrive == "") {
+  //     this.ms.add({ severity: 'error', summary: 'error', detail: 'Renseigne ton sejour !' , life: 3000});
+  //
+  //   } else {
+  //     const modal = new bootstrap.Modal(this.exampleModal.nativeElement);
+  //     modal.show();    }
+  // }
+
+  showDialog() {
+      if (this.sejour().dateArrive == "" && this.sejour().dateArrive == "") {
+        this.ms.add({ severity: 'error', summary: 'error', detail: 'Renseigne ton sejour !' , life: 3000});
+      } else {
+        this.visible = true;
+      }
+  }
 }

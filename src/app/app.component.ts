@@ -8,7 +8,7 @@ import {MessageService} from 'primeng/api';
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  providers: [MessageService]
+  providers: [MessageService ]
 })
 export class AppComponent {
   title = 'app-immoProject';
