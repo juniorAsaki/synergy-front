@@ -17,7 +17,8 @@ export const environment = {
       getPropertyOwner: "api/v1/owners/residences",
       getOne: "api/v1/residences/slug",
       save: "api/v1/owners/residences",
-      savePicture: "api/v1/owners/picture-residences"
+      savePicture: "api/v1/owners/picture-residences",
+      search: "api/v1/residences/search",
     }
   }
 }

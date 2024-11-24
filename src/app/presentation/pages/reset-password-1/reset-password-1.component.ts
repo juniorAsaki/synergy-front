@@ -4,6 +4,8 @@ import {NgIf} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
 import {BaseService} from '../../../core/services/base.service';
 import {environment} from '../../../../environments/environment.dev';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 @Component({
   selector: 'app-reset-password-1',
@@ -12,7 +14,8 @@ import {environment} from '../../../../environments/environment.dev';
     ReactiveFormsModule,
     NgIf,
     FormsModule,
-    RouterLink
+    RouterLink,
+    ToastModule
   ],
   templateUrl: './reset-password-1.component.html',
   styleUrl: './reset-password-1.component.scss'
@@ -23,7 +26,7 @@ export class ResetPassword1Component implements OnInit{
 
   formResetPassword!: FormGroup;
 
-  constructor(private fb: FormBuilder , private baseService: BaseService , private router: Router) {
+  constructor(private ms: MessageService , private fb: FormBuilder , private baseService: BaseService , private router: Router) {
   }
 
 
@@ -52,6 +55,7 @@ export class ResetPassword1Component implements OnInit{
         this.enterNewPassword.set(true);
         console.log(this.enterNewPassword())
       }, error: err => {
+        this.ms.add({ severity: 'error', summary: 'error', detail: 'Email n\'existe pas' , life: 3000});
         console.error(err);
       }
     })

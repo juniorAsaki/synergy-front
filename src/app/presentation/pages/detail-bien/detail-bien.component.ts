@@ -73,18 +73,10 @@ export class DetailBienComponent implements OnInit{
 
 
   goToPaiement() {
-    this.router.navigateByUrl('/paiement');
+    this.router.navigateByUrl('/registerCustomer');
   }
 
-  // goToDetailReservation() {
-  //
-  //   if (this.sejour().dateArrive == "" && this.sejour().dateArrive == "") {
-  //     this.ms.add({ severity: 'error', summary: 'error', detail: 'Renseigne ton sejour !' , life: 3000});
-  //
-  //   } else {
-  //     const modal = new bootstrap.Modal(this.exampleModal.nativeElement);
-  //     modal.show();    }
-  // }
+
 
   showDialog() {
       if (this.sejour().dateArrive == "" && this.sejour().dateArrive == "") {

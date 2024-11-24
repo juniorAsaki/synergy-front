@@ -13,6 +13,7 @@ import {PageResidence, Residence} from '../../../domaine/interfaces/residence.in
 import {BaseService} from '../../../core/services/base.service';
 import {environment} from '../../../../environments/environment.dev';
 import {Observable, of} from 'rxjs';
+import {SearchService} from '../../../core/services/search.service';
 
 
 declare var google: any;
@@ -49,18 +50,18 @@ export class ListBiensComponent  implements OnInit {
   pageSize: number = 9;
   totalPage: number = 0;
 
-  constructor(private baseService: BaseService) {
+  constructor(private baseService: BaseService , public searchS: SearchService) {
   }
 
   ngOnInit(): void {
     this.getAllResidence();
-    this.getPageResidence(this.currentPaage , this.pageSize)
+    //this.getPageResidence(this.currentPaage , this.pageSize)
   }
 
   getAllResidence() {
     this.baseService.getAll(environment.endPoint.residence.getAll).subscribe({
       next: (value: Residence[]) => {
-        this.ListResidences.set(value);
+          this.searchS.Properties.set(value);
       },
       error: err => console.error(err)
     })

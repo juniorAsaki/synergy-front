@@ -1,9 +1,18 @@
 <div class="form-container">
-  <form action="/search" method="GET" class="search-form d-flex align-items-center">
+  <form [formGroup]="formSearch" class="search-form d-flex align-items-center" (ngSubmit)="searchProperty()">
     <!-- Champs de recherche -->
     <div class="search-fields">
       <div class="field">
-        <input  type="text" id="destination" name="destination" placeholder="Rechercher un bien" required>
+        <input formControlName="price"  type="text" class="destination" name="price" placeholder="Prix" required>
+      </div>
+      <div class="field">
+        <input formControlName="city" type="text" class="destination" name="city" placeholder="Ville" required>
+      </div>
+      <div class="field">
+        <input formControlName="district" type="text" class="destination" name="district" placeholder="Quartier" required>
+      </div>
+      <div class="field">
+        <input formControlName="name" type="text" class="destination" name="name" placeholder="nom du bien" required>
       </div>
     </div>
 

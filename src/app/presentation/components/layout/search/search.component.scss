@@ -1,13 +1,16 @@
 /* Container principal */
 .form-container {
-  max-width: 900px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 5px solid #ffc800;
 
+}
+
+.form-container form{
+  gap: 10px;
 }
 
 /* Tabs (Vol, Séjour, etc.) */
@@ -34,31 +37,18 @@
 /* Champs de recherche */
 .search-fields {
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
-  width: 900px;
 }
 
-.field {
-  flex: 1 1 calc(25% - 15px);
-  display: flex;
-  flex-direction: column;
-}
-
-.field label {
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
 
 .field input {
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #999;
+  border-radius: 35px;
   font-size: 24px;
   font-weight:bolder;
+  width: 100%;
   outline:none;
-  margin-right:10px;
 }
 
 

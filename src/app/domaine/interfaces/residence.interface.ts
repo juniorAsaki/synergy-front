@@ -14,6 +14,8 @@ export interface Residence {
   catering: boolean,
   cleaning: boolean,
   available: boolean,
+  longitude: string,
+  latitude: string,
   address: {
     city: string,
     district: string

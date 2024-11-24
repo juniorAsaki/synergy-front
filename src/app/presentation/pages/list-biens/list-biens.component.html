@@ -5,7 +5,7 @@
 
     <div class="grid-container row">
       <!-- Card Example -->
-      @for (residence of ListResidences(); track residence.slug){
+      @for (residence of searchS.Properties(); track residence.slug){
         <div class="col-12 col-md-6 col-lg-3 mb-4" >
           <a [routerLink]="['/detail' , residence.slug]" style="text-decoration: none;">
             <div class="card" >

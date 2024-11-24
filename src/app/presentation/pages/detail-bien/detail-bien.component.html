@@ -6,7 +6,7 @@
         <div class="carousel-inner">
           @for (residencePicture of residence().images; track residencePicture.imageUrl){
             <div class="carousel-item active">
-              <img src="{{residencePicture.imageUrl}}" class="d-block w-100" style="height:500px; object-fit: cover; border-radius:20px;" [alt]="residence().name">
+              <img src="{{residencePicture?.imageUrl}}" class="d-block w-100" style="height:500px; object-fit: cover; border-radius:20px;" [alt]="residence().name">
             </div>
           }
         </div>
@@ -14,10 +14,10 @@
     </div>
     <div class="row mt-4">
       <div class="col">
-        <img src="{{residence().images[0].imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name">
+        <img src="{{residence().images[0]?.imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name">
       </div>
       <div class="col">
-        <img src="{{residence().images[1].imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name" >
+        <img src="{{residence().images[1]?.imageUrl}}" class="d-block w-100" style="object-fit: cover; height: 350px; border-radius:20px;" [alt]="residence().name" >
       </div>
     </div>
   </div>

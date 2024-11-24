@@ -1,5 +1,5 @@
 
-<form class="form-container d-flex flex-column m-auto mt-3 align-content-center" >
+<form class="form-container d-flex flex-column m-auto mt-5 align-content-center" >
        <h2 class="text-center">Information personnelle</h2>
       <div class="col-md-6 m-auto">
         <label for="name" class="form-label">Nom </label>
@@ -17,18 +17,18 @@
         <label for="name" class="form-label">Email </label>
         <input type="text" class="form-control py-3 w-100" id="email" name="email" placeholder="Email" required>
       </div>
-      <div class="mt-5 m-auto">
+  <div class="mt-5 m-auto d-flex align-items-center flex-column gap-3">
       <div class="button-group">
         <a [routerLink]="['/login']">
-          <button mat-raised-button class="btn btn-primary" >Creer un compte, reservez</button>
+          <button mat-raised-button class="btn btn-dark" >Creer un compte, reservez</button>
         </a>
-      </div> <br>
+      </div>
       <div class="button-group">
         <a [routerLink]="['/reservation-bien']">
           <button mat-raised-button class="btn btn-warning" >Reservez, sans compte</button>
         </a>
       </div>
-    </div>
+  </div>
 </form>
 
 

@@ -48,6 +48,9 @@ import {MoyenPaiementComponent} from './presentation/components/shared/moyen-pai
 import {AuthGuard} from './core/guards/auth.guard';
 import {LoginPageGuard} from './core/guards/login.guard';
 import {AuthorizationGuard} from './core/guards/roleAuth.guard';
+import {
+  PageAccueilReservationComponent
+} from './presentation/pages/page-accueil-reservation/page-accueil-reservation.component';
 
 export const routes: Routes = [
   {path: "home" , component: BaseLandingComponent},
@@ -57,6 +60,7 @@ export const routes: Routes = [
   {path: "paiement", component: MoyenPaiementComponent},
   {path: "" , redirectTo: "home" , pathMatch:"full"},
   {path: "validate-email/:email" , component: ValidateEmailComponent},
+  {path: "registerCustomer" , component: PageAccueilReservationComponent},
   {path: "reset-password-first" , component: ResetPassword1Component},
   {path: "reservation-bien/:slug" , component: ReservationBienComponent},
   {path: "detail/:slug" , component: DetailBienComponent},
